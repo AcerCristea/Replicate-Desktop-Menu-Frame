@@ -1,41 +1,50 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { ArchivePage } from "./components/ArchivePage";
 import { ProjectDetail } from "./components/ProjectDetail";
 
+function AppContent() {
+  const location = useLocation();
+  const isProjectPage = location.pathname.startsWith('/project/');
+
+  return (
+    <div className="size-full flex bg-[#e6e6e6]">
+      {!isProjectPage && <Navigation />}
+      <div className={isProjectPage ? "flex-1" : "flex-1 ml-[240px]"}>
+        <Routes>
+          <Route path="/" element={<ArchivePage />} />
+          <Route
+            path="/project/:id"
+            element={<ProjectDetail />}
+          />
+          <Route
+            path="/about"
+            element={<PlaceholderPage title="About" />}
+          />
+          <Route
+            path="/approach"
+            element={<PlaceholderPage title="Approach" />}
+          />
+          <Route
+            path="/selected-works"
+            element={
+              <PlaceholderPage title="Selected Works" />
+            }
+          />
+          <Route
+            path="/white-space"
+            element={<PlaceholderPage title="White Space" />}
+          />
+        </Routes>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="size-full flex bg-[#e6e6e6]">
-        <Navigation />
-        <div className="flex-1 ml-[240px]">
-          <Routes>
-            <Route path="/" element={<ArchivePage />} />
-            <Route
-              path="/project/:id"
-              element={<ProjectDetail />}
-            />
-            <Route
-              path="/about"
-              element={<PlaceholderPage title="About" />}
-            />
-            <Route
-              path="/approach"
-              element={<PlaceholderPage title="Approach" />}
-            />
-            <Route
-              path="/selected-works"
-              element={
-                <PlaceholderPage title="Selected Works" />
-              }
-            />
-            <Route
-              path="/white-space"
-              element={<PlaceholderPage title="White Space" />}
-            />
-          </Routes>
-        </div>
-      </div>
+      <AppContent />
     </BrowserRouter>
   );
 }

@@ -45,18 +45,18 @@ export function Navigation() {
         </nav>
         
         <div className="flex-grow" />
-        
-        <div className="flex items-end pb-0 pr-[10px] relative">
-          <div className="flex flex-col items-end w-full">
-            <div className="flex items-center justify-center mr-[-10px] w-[74px] overflow-hidden">
-              <div className="rotate-[270deg] origin-center">
+
+        <div className="flex items-end pb-0 pr-[10px] relative h-[650px]">
+          <div className="flex flex-col items-end w-full h-full justify-end">
+            <div className="flex h-[650px] items-center justify-center mr-[-10px] relative shrink-0 w-[74px]">
+              <div className="flex-none rotate-[270deg]">
                 <p className="font-['Albert_Sans'] font-bold text-[60px] tracking-[-2px] leading-[30px] text-[#d05d49] whitespace-nowrap">
                   Archive
                 </p>
               </div>
             </div>
-            <div className="flex items-center justify-center mr-[-10px] w-[55.974px] overflow-hidden mt-4">
-              <div className="rotate-[270deg] origin-center">
+            <div className="flex h-[131.354px] items-center justify-center mr-[-10px] relative shrink-0 w-[55.974px]">
+              <div className="flex-none rotate-[270deg]">
                 <p className="font-['Albert_Sans'] font-semibold text-[14px] leading-[16px] text-[#1e3239] whitespace-nowrap">
                   1996-2026
                 </p>
