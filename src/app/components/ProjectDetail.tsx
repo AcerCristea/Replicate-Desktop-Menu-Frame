@@ -31,19 +31,16 @@ function CloseButton({ onClick }: { onClick: () => void }) {
 }
 
 function ProjectInformation({
-  onClose,
   clientName,
   overview,
   description
 }: {
-  onClose: () => void;
   clientName: string;
   overview: string;
   description: string;
 }) {
   return (
- <div className="absolute content-stretch flex flex-col gap-[16px] items-end left-[1088px] top-[30px] w-[321px] max-h-[calc(100vh-317px)] overflow-y-auto scrollbar-hide">
-      <CloseButton onClick={onClose} />
+    <div className="absolute content-stretch flex flex-col gap-[16px] items-end left-[1088px] top-[30px] w-[321px] max-h-[calc(100vh-347px)] overflow-y-auto scrollbar-hide pr-1">
       <p className="font-['Albert_Sans',sans-serif] font-bold leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[36px] tracking-[-2px] w-[min-content]">
         {clientName}
       </p>
@@ -57,37 +54,28 @@ function ProjectInformation({
   );
 }
 
+
 function PortraitImageContainer() {
   return (
-    <div className="basis-0 grow min-h-px min-w-px relative shrink-0 w-full">
-      <div className="absolute h-[707px] right-0 top-0 w-[998px]">
-        <img
-          alt="Project"
-          className="absolute inset-0 max-w-none object-cover pointer-events-none size-full"
-          src={placeholderImage}
-        />
-      </div>
-      <div className="absolute h-[707px] right-0 top-[717px] w-[998px]">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-          <img
-            alt=""
-            className="absolute max-w-none object-cover size-full"
-            src={placeholderImage}
-          />
-          <div className="absolute bg-[#1e3239] inset-0" />
-        </div>
-      </div>
+    <div className="relative w-full h-full">
+      <img
+        alt="Project"
+        className="absolute top-0 right-0 w-full h-full object-cover object-top-right pointer-events-none"
+        style={{ objectPosition: 'top right' }}
+        src={placeholderImage}
+      />
     </div>
   );
 }
 
 function ImageContainer() {
   return (
-    <div className="absolute content-stretch flex flex-col h-[707px] items-end max-h-[707px] right-[412px] top-[30px] w-[998px]">
+    <div className="absolute flex flex-col items-end right-[412px] top-[30px] bottom-[287px] w-[998px]">
       <PortraitImageContainer />
     </div>
   );
 }
+
 
 function Categories() {
   return (
@@ -252,11 +240,19 @@ function ImageCanvas({
   description: string;
 }) {
   return (
-    <div className="h-[1023.984px] overflow-clip relative shrink-0 w-[1440px]">
-      <div className="absolute bg-[#1e3239] h-[287px] left-[1058px] shadow-[0px_-10px_40px_0px_rgba(0,0,0,0.25)] top-[736.98px] w-[382px]" />
-      <div className="absolute bg-[#1e3239] h-[1023.984px] left-0 top-0 w-[1058px]" />
+    <div className="h-screen overflow-clip relative w-[1440px]">
+      {/* Fixed close button */}
+      <div className="absolute right-[30px] top-[30px] z-10">
+        <CloseButton onClick={onClose} />
+      </div>
+
+      {/* Bottom caption block - fixed */}
+      <div className="absolute bg-[#1e3239] h-[287px] left-[1058px] shadow-[0px_-10px_40px_0px_rgba(0,0,0,0.25)] bottom-0 w-[382px]" />
+
+      {/* Left main block - full height */}
+      <div className="absolute bg-[#1e3239] h-full left-0 top-0 w-[1058px]" />
+
       <ProjectInformation
-        onClose={onClose}
         clientName={clientName}
         overview={overview}
         description={description}
@@ -267,6 +263,7 @@ function ImageCanvas({
     </div>
   );
 }
+
 
 export function ProjectDetail() {
   const { id } = useParams<{ id: string }>();
