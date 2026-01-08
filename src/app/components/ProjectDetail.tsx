@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase, Project } from '../../lib/supabase';
 import svgPaths from '../../imports/svg-project-page';
-
-// Placeholder image - you can replace this with a real image URL
-const placeholderImage = "data:image/svg+xml,%3Csvg width='998' height='707' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='998' height='707' fill='%233e6064'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='24' fill='%23cfd860' text-anchor='middle' dominant-baseline='middle'%3EProject Image%3C/text%3E%3C/svg%3E";
+import { SupabaseImage } from './SupabaseImage';
 
 function Close() {
   return (
@@ -56,13 +54,18 @@ function ProjectInformation({
 
 
 function PortraitImageContainer() {
+  // Test with a specific image from 007Bond folder
+  // Update the path to match your actual file structure in the bucket
+  const testImagePath = '007Bond/01_Bond.jpeg'; // Replace with actual filename
+
   return (
     <div className="relative w-full h-full">
-      <img
+      <SupabaseImage
+        bucketName="Portfolio-VIsuals"
+        imagePath={testImagePath}
         alt="Project"
         className="absolute top-0 right-0 w-full h-full object-cover object-top-right pointer-events-none"
         style={{ objectPosition: 'top right' }}
-        src={placeholderImage}
       />
     </div>
   );
@@ -77,26 +80,26 @@ function ImageContainer() {
 }
 
 
-function Categories() {
+function Categories({ industry }: { industry: string }) {
   return (
     <div className="content-stretch flex flex-col items-start pb-[2px] pt-0 px-0 relative shrink-0 text-[#aaccd0] text-[14px] w-full">
-      <p className="font-['Albert_Sans',sans-serif] font-black leading-[30px] relative shrink-0 w-full">FINANCE & INSURANCE</p>
+      <p className="font-['Albert_Sans',sans-serif] font-black leading-[30px] relative shrink-0 w-full">{industry}</p>
       <p className="font-['Albert_Sans',sans-serif] leading-[16px] not-italic relative shrink-0 w-full">Video / Streaming, Subscription, Multi-platform, Service Design, Social Features</p>
     </div>
   );
 }
 
-function ProjectDetails() {
+function ProjectDetails({ team, date, industry }: { team: string; date: string; industry: string }) {
   return (
     <div className="absolute bottom-[90px] content-stretch flex flex-col gap-[20px] items-start justify-end left-[30px] w-[322px]">
       <div className="font-['Albert_Sans',sans-serif] font-semibold h-[20px] leading-[18px] relative shrink-0 text-[#cfd860] text-[16px] w-full">
-        <p className="mb-0">Designed by AllofUs</p>
+        <p className="mb-0">{team}</p>
         <p className="mb-0">&nbsp;</p>
         <p className="mb-0">&nbsp;</p>
         <p>&nbsp;</p>
       </div>
-      <Categories />
-      <p className="font-['Albert_Sans',sans-serif] font-black h-[41px] leading-[48px] relative shrink-0 text-[#cfd860] text-[48px] tracking-[-2px] w-[124px]">2014</p>
+      <Categories industry={industry} />
+      <p className="font-['Albert_Sans',sans-serif] font-black h-[41px] leading-[48px] relative shrink-0 text-[#cfd860] text-[48px] tracking-[-2px] w-[124px]">{date}</p>
     </div>
   );
 }
@@ -232,12 +235,18 @@ function ImageCanvas({
   onClose,
   clientName,
   overview,
-  description
+  description,
+  team,
+  date,
+  industry
 }: {
   onClose: () => void;
   clientName: string;
   overview: string;
   description: string;
+  team: string;
+  date: string;
+  industry: string;
 }) {
   return (
     <div className="h-screen overflow-clip relative w-[1440px]">
@@ -258,7 +267,7 @@ function ImageCanvas({
         description={description}
       />
       <ImageContainer />
-      <ProjectDetails />
+      <ProjectDetails team={team} date={date} industry={industry} />
       <Captions />
     </div>
   );
@@ -333,6 +342,9 @@ export function ProjectDetail() {
         clientName={project.ClientName}
         overview={project.Overview || 'No overview available'}
         description={project.Description || 'No description available'}
+        team={project.Team || 'Team information not available'}
+        date={project.Date || 'Date not available'}
+        industry={project.Industry || 'Industry not available'}
       />
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
