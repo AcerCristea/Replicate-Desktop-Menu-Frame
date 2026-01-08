@@ -211,7 +211,7 @@ function BackArrow() {
 
 function Captions() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[7px] items-start left-[1086px] top-[778.98px] w-[323px]">
+    <div className="absolute content-stretch flex flex-col gap-[7px] items-start left-[1086px] bottom-[78px] w-[323px]">
       <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
         <ImageNumberCounter />
         <ForwardArrow />
