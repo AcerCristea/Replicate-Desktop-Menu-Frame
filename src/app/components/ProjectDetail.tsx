@@ -42,7 +42,7 @@ function ProjectInformation({
   description: string;
 }) {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-end left-[1088px] top-[30px] w-[321px]">
+ <div className="absolute content-stretch flex flex-col gap-[16px] items-end left-[1088px] top-[30px] w-[321px] max-h-[calc(100vh-317px)] overflow-y-auto scrollbar-hide">
       <CloseButton onClick={onClose} />
       <p className="font-['Albert_Sans',sans-serif] font-bold leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[36px] tracking-[-2px] w-[min-content]">
         {clientName}
@@ -50,7 +50,7 @@ function ProjectInformation({
       <p className="font-['Albert_Sans',sans-serif] font-light leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[24px] tracking-[-1px] w-[min-content]">
         {overview}
       </p>
-      <div className="font-['Albert_Sans',sans-serif] font-normal h-[154px] leading-[24px] relative shrink-0 text-[#1e3239] text-[18px] w-full overflow-y-auto">
+      <div className="font-['Albert_Sans',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#1e3239] text-[18px] w-full">
         <p>{description}</p>
       </div>
     </div>
@@ -337,6 +337,16 @@ export function ProjectDetail() {
         overview={project.Overview || 'No overview available'}
         description={project.Description || 'No description available'}
       />
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
+
 }
