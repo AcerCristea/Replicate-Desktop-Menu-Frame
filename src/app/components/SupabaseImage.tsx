@@ -66,6 +66,25 @@ export function SupabaseImage({
     );
   }
 
+  // Detect if this is a video file
+  const isVideo = imagePath.toLowerCase().endsWith('.mp4') ||
+                  imagePath.toLowerCase().endsWith('.mov') ||
+                  imagePath.toLowerCase().endsWith('.webm');
+
+  if (isVideo) {
+    return (
+      <video
+        src={imageUrl}
+        className={className}
+        style={style}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+    );
+  }
+
   return (
     <img
       src={imageUrl}

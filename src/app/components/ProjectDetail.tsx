@@ -53,16 +53,21 @@ function ProjectInformation({
 }
 
 
-function PortraitImageContainer() {
-  // Test with a specific image from 007Bond folder
-  // Update the path to match your actual file structure in the bucket
-  const testImagePath = '007Bond/01_Bond.jpeg'; // Replace with actual filename
+function PortraitImageContainer({ projectId, filename }: { projectId: string; filename: string }) {
+  // Construct the image path using the pattern: {ID}/01_{Filename}.jpeg
+  const imagePath = `${projectId}/01_${filename}.jpeg`;
+
+  console.log('=== PortraitImageContainer Debug ===');
+  console.log('projectId:', projectId);
+  console.log('filename:', filename);
+  console.log('constructed imagePath:', imagePath);
+  console.log('===================================');
 
   return (
     <div className="relative w-full h-full">
       <SupabaseImage
         bucketName="Portfolio-VIsuals"
-        imagePath={testImagePath}
+        imagePath={imagePath}
         alt="Project"
         className="absolute top-0 right-0 w-full h-full object-cover object-top-right pointer-events-none"
         style={{ objectPosition: 'top right' }}
@@ -71,10 +76,10 @@ function PortraitImageContainer() {
   );
 }
 
-function ImageContainer() {
+function ImageContainer({ projectId, filename }: { projectId: string; filename: string }) {
   return (
     <div className="absolute flex flex-col items-end right-[412px] top-[30px] bottom-[287px] w-[998px]">
-      <PortraitImageContainer />
+      <PortraitImageContainer projectId={projectId} filename={filename} />
     </div>
   );
 }
@@ -286,7 +291,9 @@ function Captions({
 
 function ImageCanvas({
   onClose,
+  projectId,
   clientName,
+  filename,
   overview,
   description,
   team,
@@ -297,7 +304,9 @@ function ImageCanvas({
   captions
 }: {
   onClose: () => void;
+  projectId: string;
   clientName: string;
+  filename: string;
   overview: string;
   description: string;
   team: string;
@@ -339,7 +348,7 @@ function ImageCanvas({
         overview={overview}
         description={description}
       />
-      <ImageContainer />
+      <ImageContainer projectId={projectId} filename={filename} />
       <ProjectDetails team={team} date={date} industry={industry} primaryTag={primaryTag} secondaryTags={secondaryTags} />
       <Captions
         captions={captions}
@@ -421,16 +430,26 @@ export function ProjectDetail() {
   // Parse captions string - split by || and filter out empty/NA entries
   const captionsArray = Array.isArray(project.Captions)
     ? project.Captions
-    : (project.Captions || '')
-        .split('||')
-        .map(caption => caption.trim())
-        .filter(caption => caption && caption !== 'NA');
+    : typeof project.Captions === 'string'
+        ? (project.Captions as string).split('||')
+            .map(caption => caption.trim())
+            .filter(caption => caption && caption !== 'NA')
+        : [];
+
+  console.log('=== ProjectDetail Debug ===');
+  console.log('project.ID:', project.ID);
+  console.log('project.ClientName:', project.ClientName);
+  console.log('project.Filename:', project.Filename);
+  console.log('Full project object:', project);
+  console.log('===========================');
 
   return (
     <div className="bg-[#cfd860] content-stretch flex items-center justify-center relative w-full min-h-screen">
       <ImageCanvas
         onClose={handleClose}
+        projectId={project.ID}
         clientName={project.ClientName}
+        filename={project.Filename}
         overview={project.Overview || 'No overview available'}
         description={project.Description || 'No description available'}
         team={project.Team || 'Team information not available'}
