@@ -53,13 +53,25 @@ function ProjectInformation({
 }
 
 
-function PortraitImageContainer({ projectId, filename }: { projectId: string; filename: string }) {
-  // Construct the image path using the pattern: {ID}/01_{Filename}.jpeg
-  const imagePath = `${projectId}/01_${filename}.jpeg`;
+function PortraitImageContainer({
+  projectId,
+  filename,
+  imageNumber
+}: {
+  projectId: string;
+  filename: string;
+  imageNumber: number;
+}) {
+  // Format the image number with leading zero (01, 02, 03, etc.)
+  const formattedNumber = imageNumber.toString().padStart(2, '0');
+  // Construct the image path using the pattern: {ID}/{number}_{Filename}.jpeg
+  const imagePath = `${projectId}/${formattedNumber}_${filename}.jpeg`;
 
   console.log('=== PortraitImageContainer Debug ===');
   console.log('projectId:', projectId);
   console.log('filename:', filename);
+  console.log('imageNumber:', imageNumber);
+  console.log('formattedNumber:', formattedNumber);
   console.log('constructed imagePath:', imagePath);
   console.log('===================================');
 
@@ -76,10 +88,18 @@ function PortraitImageContainer({ projectId, filename }: { projectId: string; fi
   );
 }
 
-function ImageContainer({ projectId, filename }: { projectId: string; filename: string }) {
+function ImageContainer({
+  projectId,
+  filename,
+  imageNumber
+}: {
+  projectId: string;
+  filename: string;
+  imageNumber: number;
+}) {
   return (
     <div className="absolute flex flex-col items-end right-[412px] top-[30px] bottom-[287px] w-[998px]">
-      <PortraitImageContainer projectId={projectId} filename={filename} />
+      <PortraitImageContainer projectId={projectId} filename={filename} imageNumber={imageNumber} />
     </div>
   );
 }
@@ -317,16 +337,20 @@ function ImageCanvas({
   captions: string[];
 }) {
   const [currentCaptionIndex, setCurrentCaptionIndex] = useState(0);
+  // Image number state - starts at 1 for "01"
+  const [currentImageNumber, setCurrentImageNumber] = useState(1);
 
   const handleNext = () => {
     if (currentCaptionIndex < captions.length - 1) {
       setCurrentCaptionIndex(currentCaptionIndex + 1);
+      setCurrentImageNumber(currentImageNumber + 1);
     }
   };
 
   const handlePrevious = () => {
     if (currentCaptionIndex > 0) {
       setCurrentCaptionIndex(currentCaptionIndex - 1);
+      setCurrentImageNumber(currentImageNumber - 1);
     }
   };
 
@@ -348,7 +372,7 @@ function ImageCanvas({
         overview={overview}
         description={description}
       />
-      <ImageContainer projectId={projectId} filename={filename} />
+      <ImageContainer projectId={projectId} filename={filename} imageNumber={currentImageNumber} />
       <ProjectDetails team={team} date={date} industry={industry} primaryTag={primaryTag} secondaryTags={secondaryTags} />
       <Captions
         captions={captions}
