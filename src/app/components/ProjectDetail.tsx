@@ -39,7 +39,7 @@ function ProjectInformation({
 }) {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-end left-[1088px] top-[30px] w-[321px] max-h-[calc(100vh-347px)] overflow-y-auto scrollbar-hide pr-1">
-      <p className="font-['Albert_Sans',sans-serif] font-bold leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[36px] tracking-[-2px] w-[min-content]">
+      <p className="font-['Albert_Sans',sans-serif] font-bold leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[36px] tracking-[-2px] w-[calc(100%-30px)]">
         {clientName}
       </p>
       <p className="font-['Albert_Sans',sans-serif] font-light leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[24px] tracking-[-1px] w-[min-content]">
@@ -62,27 +62,55 @@ function PortraitImageContainer({
   filename: string;
   imageNumber: number;
 }) {
-  // Format the image number with leading zero (01, 02, 03, etc.)
-  const formattedNumber = imageNumber.toString().padStart(2, '0');
-  // Construct the image path using the pattern: {ID}/{number}_{Filename}.jpeg
-  const imagePath = `${projectId}/${formattedNumber}_${filename}.jpeg`;
+  const [mediaPath, setMediaPath] = useState<string>('');
+  const [hasError, setHasError] = useState(false);
 
-  console.log('=== PortraitImageContainer Debug ===');
-  console.log('projectId:', projectId);
-  console.log('filename:', filename);
-  console.log('imageNumber:', imageNumber);
-  console.log('formattedNumber:', formattedNumber);
-  console.log('constructed imagePath:', imagePath);
-  console.log('===================================');
+  useEffect(() => {
+    // Format the image number with leading zero (01, 02, 03, etc.)
+    const formattedNumber = imageNumber.toString().padStart(2, '0');
+    // Start by trying .jpeg
+    const jpegPath = `${projectId}/${formattedNumber}_${filename}.jpeg`;
+
+    console.log('=== PortraitImageContainer Debug ===');
+    console.log('projectId:', projectId);
+    console.log('filename:', filename);
+    console.log('imageNumber:', imageNumber);
+    console.log('formattedNumber:', formattedNumber);
+    console.log('trying jpeg first:', jpegPath);
+    console.log('===================================');
+
+    setMediaPath(jpegPath);
+    setHasError(false);
+  }, [projectId, filename, imageNumber]);
+
+  // If jpeg fails, try mp4
+  const handleImageError = () => {
+    if (!hasError && mediaPath.endsWith('.jpeg')) {
+      const formattedNumber = imageNumber.toString().padStart(2, '0');
+      const mp4Path = `${projectId}/${formattedNumber}_${filename}.mp4`;
+
+      console.log('=== Jpeg failed, trying mp4 ===');
+      console.log('mp4 path:', mp4Path);
+      console.log('================================');
+
+      setMediaPath(mp4Path);
+      setHasError(true);
+    }
+  };
+
+  if (!mediaPath) {
+    return <div className="relative w-full h-full bg-gray-200" />;
+  }
 
   return (
     <div className="relative w-full h-full">
       <SupabaseImage
         bucketName="Portfolio-VIsuals"
-        imagePath={imagePath}
+        imagePath={mediaPath}
         alt="Project"
         className="absolute top-0 right-0 w-full h-full object-cover object-top-right pointer-events-none"
         style={{ objectPosition: 'top right' }}
+        onError={handleImageError}
       />
     </div>
   );

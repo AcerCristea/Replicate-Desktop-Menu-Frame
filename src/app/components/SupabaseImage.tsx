@@ -7,6 +7,7 @@ interface SupabaseImageProps {
   alt?: string;
   className?: string;
   style?: React.CSSProperties;
+  onError?: () => void;
 }
 
 export function SupabaseImage({
@@ -14,7 +15,8 @@ export function SupabaseImage({
   imagePath,
   alt = 'Image',
   className = '',
-  style = {}
+  style = {},
+  onError
 }: SupabaseImageProps) {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -67,9 +69,7 @@ export function SupabaseImage({
   }
 
   // Detect if this is a video file
-  const isVideo = imagePath.toLowerCase().endsWith('.mp4') ||
-                  imagePath.toLowerCase().endsWith('.mov') ||
-                  imagePath.toLowerCase().endsWith('.webm');
+  const isVideo = imagePath.toLowerCase().endsWith('.mp4');
 
   if (isVideo) {
     return (
@@ -79,8 +79,11 @@ export function SupabaseImage({
         style={style}
         autoPlay
         loop
-        muted
         playsInline
+        onError={() => {
+          console.error('Video failed to load:', imagePath);
+          if (onError) onError();
+        }}
       />
     );
   }
@@ -91,6 +94,10 @@ export function SupabaseImage({
       alt={alt}
       className={className}
       style={style}
+      onError={() => {
+        console.error('Image failed to load:', imagePath);
+        if (onError) onError();
+      }}
     />
   );
 }
