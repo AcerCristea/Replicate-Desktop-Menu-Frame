@@ -27,12 +27,12 @@ CREATE TABLE "Selflux_Archive" (
   "Team" TEXT,
   "Filename" TEXT,
   "PrimaryTag" TEXT NOT NULL,
-  "SecondaryTags" TEXT[],
+  "SecondaryTags" TEXT,
   "Industry" TEXT NOT NULL,
   "Visible" TEXT DEFAULT 'true',
   "Overview" TEXT,
   "Description" TEXT,
-  "Captions" TEXT[],
+  "Captions" TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 

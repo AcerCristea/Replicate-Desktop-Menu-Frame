@@ -33,8 +33,8 @@ Your Supabase table should have these column names (case-sensitive):
 | `Filename` | TEXT | Mixed case (optional) |
 | `Overview` | TEXT | Mixed case (optional) |
 | `Description` | TEXT | Mixed case (optional) |
-| `SecondaryTags` | TEXT[] | Mixed case (optional) |
-| `Captions` | TEXT[] | Mixed case (optional) |
+| `SecondaryTags` | TEXT | Mixed case (optional) |
+| `Captions` | TEXT | Mixed case (optional) |
 
 ## Database Query Examples
 

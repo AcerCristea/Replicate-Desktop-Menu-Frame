@@ -80,16 +80,42 @@ function ImageContainer() {
 }
 
 
-function Categories({ industry }: { industry: string }) {
+function Categories({
+  industry,
+  primaryTag,
+  secondaryTags
+}: {
+  industry: string;
+  primaryTag: string;
+  secondaryTags: string;
+}) {
+  // Combine primary tag and secondary tags
+  // If secondaryTags exists, add it after primary with comma
+  const allTags = secondaryTags
+    ? `${primaryTag}, ${secondaryTags}`
+    : primaryTag;
+
   return (
     <div className="content-stretch flex flex-col items-start pb-[2px] pt-0 px-0 relative shrink-0 text-[#aaccd0] text-[14px] w-full">
       <p className="font-['Albert_Sans',sans-serif] font-black leading-[30px] relative shrink-0 w-full">{industry}</p>
-      <p className="font-['Albert_Sans',sans-serif] leading-[16px] not-italic relative shrink-0 w-full">Video / Streaming, Subscription, Multi-platform, Service Design, Social Features</p>
+      <p className="font-['Albert_Sans',sans-serif] leading-[16px] not-italic relative shrink-0 w-full">{allTags}</p>
     </div>
   );
 }
 
-function ProjectDetails({ team, date, industry }: { team: string; date: string; industry: string }) {
+function ProjectDetails({
+  team,
+  date,
+  industry,
+  primaryTag,
+  secondaryTags
+}: {
+  team: string;
+  date: string;
+  industry: string;
+  primaryTag: string;
+  secondaryTags: string;
+}) {
   return (
     <div className="absolute bottom-[90px] content-stretch flex flex-col gap-[20px] items-start justify-end left-[30px] w-[322px]">
       <div className="font-['Albert_Sans',sans-serif] font-semibold h-[20px] leading-[18px] relative shrink-0 text-[#cfd860] text-[16px] w-full">
@@ -98,7 +124,7 @@ function ProjectDetails({ team, date, industry }: { team: string; date: string; 
         <p className="mb-0">&nbsp;</p>
         <p>&nbsp;</p>
       </div>
-      <Categories industry={industry} />
+      <Categories industry={industry} primaryTag={primaryTag} secondaryTags={secondaryTags} />
       <p className="font-['Albert_Sans',sans-serif] font-black h-[41px] leading-[48px] relative shrink-0 text-[#cfd860] text-[48px] tracking-[-2px] w-[124px]">{date}</p>
     </div>
   );
@@ -238,7 +264,9 @@ function ImageCanvas({
   description,
   team,
   date,
-  industry
+  industry,
+  primaryTag,
+  secondaryTags
 }: {
   onClose: () => void;
   clientName: string;
@@ -247,6 +275,8 @@ function ImageCanvas({
   team: string;
   date: string;
   industry: string;
+  primaryTag: string;
+  secondaryTags: string;
 }) {
   return (
     <div className="h-screen overflow-clip relative w-[1440px]">
@@ -267,7 +297,7 @@ function ImageCanvas({
         description={description}
       />
       <ImageContainer />
-      <ProjectDetails team={team} date={date} industry={industry} />
+      <ProjectDetails team={team} date={date} industry={industry} primaryTag={primaryTag} secondaryTags={secondaryTags} />
       <Captions />
     </div>
   );
@@ -335,6 +365,11 @@ export function ProjectDetail() {
     );
   }
 
+  // Convert SecondaryTags array to string if needed
+  const secondaryTagsString = Array.isArray(project.SecondaryTags)
+    ? project.SecondaryTags.join(', ')
+    : (project.SecondaryTags || '');
+
   return (
     <div className="bg-[#cfd860] content-stretch flex items-center justify-center relative w-full min-h-screen">
       <ImageCanvas
@@ -345,6 +380,8 @@ export function ProjectDetail() {
         team={project.Team || 'Team information not available'}
         date={project.Date || 'Date not available'}
         industry={project.Industry || 'Industry not available'}
+        primaryTag={project.PrimaryTag || ''}
+        secondaryTags={secondaryTagsString}
       />
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {

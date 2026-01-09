@@ -13,7 +13,7 @@ export type Project = {
   Team: string;
   Filename: string;
   PrimaryTag: string;
-  SecondaryTags: string[];
+  SecondaryTags: string;
   Industry: string;
   Visible: string;
   Overview: string;
