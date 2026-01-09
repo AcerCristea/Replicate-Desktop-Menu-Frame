@@ -130,12 +130,12 @@ function ProjectDetails({
   );
 }
 
-function ImageNumberCounter() {
+function ImageNumberCounter({ current, total }: { current: number; total: number }) {
   return (
     <div className="content-stretch flex gap-[5px] items-center leading-[22px] relative shrink-0 text-[#cfd860] text-[48px] text-nowrap tracking-[-0.96px]">
-      <p className="font-['Albert_Sans',sans-serif] font-black relative shrink-0">11 </p>
+      <p className="font-['Albert_Sans',sans-serif] font-black relative shrink-0">{current} </p>
       <p className="font-['Albert_Sans',sans-serif] font-thin relative shrink-0">of</p>
-      <p className="font-['Albert_Sans',sans-serif] font-black relative shrink-0">19</p>
+      <p className="font-['Albert_Sans',sans-serif] font-black relative shrink-0">{total}</p>
     </div>
   );
 }
@@ -167,9 +167,15 @@ function AngledRect() {
   );
 }
 
-function ForwardArrow() {
+function ForwardArrow({ onClick, disabled }: { onClick: () => void; disabled: boolean }) {
   return (
-    <button className="block cursor-pointer relative shrink-0 size-[60px] transition-transform hover:scale-110">
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`block relative shrink-0 size-[60px] transition-transform ${
+        disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer hover:scale-110'
+      }`}
+    >
       <div className="absolute flex inset-[5.2%_4.73%_44.8%_45.27%] items-center justify-center">
         <div className="flex-none h-[8.485px] rotate-[45deg] w-[33.941px]">
           <SmallParallelagram />
@@ -216,9 +222,15 @@ function AngledRect1() {
   );
 }
 
-function BackArrow() {
+function BackArrow({ onClick, disabled }: { onClick: () => void; disabled: boolean }) {
   return (
-    <div className="relative size-[30px] cursor-pointer transition-transform hover:scale-110">
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`relative size-[30px] transition-transform ${
+        disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer hover:scale-110'
+      }`}
+    >
       <div className="absolute flex inset-[5.2%_4.73%_44.8%_45.27%] items-center justify-center">
         <div className="flex-none h-[4.243px] rotate-[45deg] w-[16.971px]">
           <SmallParallelagram1 />
@@ -229,28 +241,43 @@ function BackArrow() {
           <SmallParallelagram1 />
         </div>
       </div>
-      <div className="absolute flex inset-0 items-center justify-center">
+      <div className="absolute flex inset-[0] items-center justify-center">
         <div className="flex-none rotate-[45deg] size-[21.213px]">
           <AngledRect1 />
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
-function Captions() {
+function Captions({
+  captions,
+  currentIndex,
+  onNext,
+  onPrevious
+}: {
+  captions: string[];
+  currentIndex: number;
+  onNext: () => void;
+  onPrevious: () => void;
+}) {
+  const totalCaptions = captions.length;
+  const currentCaption = captions[currentIndex] || '';
+  const isAtStart = currentIndex === 0;
+  const isAtEnd = currentIndex === totalCaptions - 1;
+
   return (
     <div className="absolute content-stretch flex flex-col gap-[7px] items-start left-[1086px] bottom-[78px] w-[323px]">
       <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-        <ImageNumberCounter />
-        <ForwardArrow />
+        <ImageNumberCounter current={currentIndex + 1} total={totalCaptions} />
+        <ForwardArrow onClick={onNext} disabled={isAtEnd} />
       </div>
       <p className="font-['Albert_Sans',sans-serif] h-[68px] leading-[16px] not-italic relative shrink-0 text-[#aaccd0] text-[14px] w-full">
-        Product cutouts allowed users to see recommended combinations important when buying shirts and ties, when buying shirts and ties.
+        {currentCaption}
       </p>
       <div className="flex items-center justify-center relative shrink-0">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <BackArrow />
+          <BackArrow onClick={onPrevious} disabled={isAtStart} />
         </div>
       </div>
     </div>
@@ -266,7 +293,8 @@ function ImageCanvas({
   date,
   industry,
   primaryTag,
-  secondaryTags
+  secondaryTags,
+  captions
 }: {
   onClose: () => void;
   clientName: string;
@@ -277,7 +305,22 @@ function ImageCanvas({
   industry: string;
   primaryTag: string;
   secondaryTags: string;
+  captions: string[];
 }) {
+  const [currentCaptionIndex, setCurrentCaptionIndex] = useState(0);
+
+  const handleNext = () => {
+    if (currentCaptionIndex < captions.length - 1) {
+      setCurrentCaptionIndex(currentCaptionIndex + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentCaptionIndex > 0) {
+      setCurrentCaptionIndex(currentCaptionIndex - 1);
+    }
+  };
+
   return (
     <div className="h-screen overflow-clip relative w-[1440px]">
       {/* Fixed close button */}
@@ -298,7 +341,12 @@ function ImageCanvas({
       />
       <ImageContainer />
       <ProjectDetails team={team} date={date} industry={industry} primaryTag={primaryTag} secondaryTags={secondaryTags} />
-      <Captions />
+      <Captions
+        captions={captions}
+        currentIndex={currentCaptionIndex}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+      />
     </div>
   );
 }
@@ -370,6 +418,14 @@ export function ProjectDetail() {
     ? project.SecondaryTags.join(', ')
     : (project.SecondaryTags || '');
 
+  // Parse captions string - split by || and filter out empty/NA entries
+  const captionsArray = Array.isArray(project.Captions)
+    ? project.Captions
+    : (project.Captions || '')
+        .split('||')
+        .map(caption => caption.trim())
+        .filter(caption => caption && caption !== 'NA');
+
   return (
     <div className="bg-[#cfd860] content-stretch flex items-center justify-center relative w-full min-h-screen">
       <ImageCanvas
@@ -382,6 +438,7 @@ export function ProjectDetail() {
         industry={project.Industry || 'Industry not available'}
         primaryTag={project.PrimaryTag || ''}
         secondaryTags={secondaryTagsString}
+        captions={captionsArray.length > 0 ? captionsArray : ['No captions available']}
       />
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
