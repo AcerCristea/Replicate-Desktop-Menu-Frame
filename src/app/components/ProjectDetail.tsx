@@ -65,23 +65,42 @@ function PortraitImageContainer({
   const [mediaPath, setMediaPath] = useState<string>('');
   const [hasError, setHasError] = useState(false);
   const [isLandscape, setIsLandscape] = useState<boolean | null>(null);
+  const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null);
   const [availableHeight, setAvailableHeight] = useState<number>(707); // default fallback
+  const [availableWidth, setAvailableWidth] = useState<number>(646); // default fallback
+  const [availablePortraitHeight, setAvailablePortraitHeight] = useState<number>(647); // default fallback
+  const [availablePortraitWidth, setAvailablePortraitWidth] = useState<number>(600); // default fallback
 
   useEffect(() => {
     // Calculate available height: viewport height - caption area (287px) - top margin (30px)
-    const calculateAvailableHeight = () => {
+    // Available width is fixed at 996px (the max-width of ImageContainer)
+    const calculateAvailableDimensions = () => {
       const viewportHeight = window.innerHeight;
+
       const captionAreaHeight = 287;
       const topMargin = 30;
       const calculatedHeight = viewportHeight - captionAreaHeight - topMargin;
+
+      // ImageContainer has fixed width of 998px with max-width 996px
+      const containerWidth = 996;
+
+      const portraitHeightMax = viewportHeight - 60;
+
+
+
+      const portraitWidthMax = 660;
+      setAvailablePortraitWidth(portraitWidthMax);
+
       setAvailableHeight(calculatedHeight);
-      console.log('Available height for images:', calculatedHeight);
+      setAvailableWidth(containerWidth);
+      setAvailablePortraitHeight(portraitHeightMax);
+      console.log('Available dimensions - Height:', calculatedHeight, 'Width:', containerWidth);
     };
 
-    calculateAvailableHeight();
-    window.addEventListener('resize', calculateAvailableHeight);
+    calculateAvailableDimensions();
+    window.addEventListener('resize', calculateAvailableDimensions);
 
-    return () => window.removeEventListener('resize', calculateAvailableHeight);
+    return () => window.removeEventListener('resize', calculateAvailableDimensions);
   }, []);
 
   useEffect(() => {
@@ -121,35 +140,58 @@ function PortraitImageContainer({
     return <div className="relative w-full h-full bg-gray-200" />;
   }
 
-  // Handle image load to determine orientation
+  // Handle image load to determine orientation and store dimensions
   const handleImageLoad = (dimensions: { width: number; height: number; isLandscape: boolean }) => {
     setIsLandscape(dimensions.isLandscape);
+    setImageDimensions({ width: dimensions.width, height: dimensions.height });
     console.log('Image orientation detected:', dimensions.isLandscape ? 'landscape' : 'portrait');
     console.log('Image dimensions:', dimensions);
   };
 
-  // Landscape: use calculated available height, centered vertically and horizontally
-  // Portrait: use calculated available height, max-width 400px, aligned top right
-  const imageStyle: React.CSSProperties = isLandscape
-    ? {
-        height: `${availableHeight}px`,
-        width: 'auto',
-        maxWidth: '996px',
-        objectFit: 'contain',
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)'
-      }
-    : {
-        maxHeight: `964px`,
-        maxWidth: '646px',
-        objectFit: 'contain',
-        objectPosition: 'top right',
-        position: 'absolute',
-        top: '0',
-        right: '0'
-      };
+  // Calculate styling based on orientation
+  let imageStyle: React.CSSProperties = {};
+
+  if (isLandscape) {
+    // LANDSCAPE: Always scale to available height, width adjusts proportionally
+    imageStyle = {
+      height: `${availableHeight}px`,
+      width: 'auto',
+      maxWidth: '996px',
+      objectFit: 'contain',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    };
+  } else if (imageDimensions) {
+    // PORTRAIT: Only scale by width (996px), height scales naturally without constraint
+    console.log('Portrait - scaling by width:', {
+      availableWidth
+    });
+
+    imageStyle = {
+      width: `${availableWidth}px`,
+      height: 'auto',
+      maxHeight: `${availablePortraitHeight}px`,
+      maxWidth: `${availablePortraitWidth}px`,
+      objectFit: 'contain',
+      objectPosition: 'top right',
+      position: 'absolute',
+      top: '0',
+      right: '0'
+    };
+  } else {
+    // Default fallback while image is loading
+    imageStyle = {
+      maxHeight: `${availableHeight}px`,
+      maxWidth: `${availableWidth}px`,
+      objectFit: 'contain',
+      objectPosition: 'top right',
+      position: 'absolute',
+      top: '0',
+      right: '0'
+    };
+  }
 
   return (
     <div className="relative w-full h-full">
