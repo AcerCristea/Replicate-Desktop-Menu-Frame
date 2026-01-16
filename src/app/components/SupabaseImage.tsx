@@ -8,6 +8,7 @@ interface SupabaseImageProps {
   className?: string;
   style?: React.CSSProperties;
   onError?: () => void;
+  onLoad?: (dimensions: { width: number; height: number; isLandscape: boolean }) => void;
 }
 
 export function SupabaseImage({
@@ -16,7 +17,8 @@ export function SupabaseImage({
   alt = 'Image',
   className = '',
   style = {},
-  onError
+  onError,
+  onLoad
 }: SupabaseImageProps) {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -94,6 +96,17 @@ export function SupabaseImage({
       alt={alt}
       className={className}
       style={style}
+      onLoad={(e) => {
+        const img = e.currentTarget;
+        const isLandscape = img.naturalWidth > img.naturalHeight;
+        if (onLoad) {
+          onLoad({
+            width: img.naturalWidth,
+            height: img.naturalHeight,
+            isLandscape
+          });
+        }
+      }}
       onError={() => {
         console.error('Image failed to load:', imagePath);
         if (onError) onError();

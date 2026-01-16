@@ -64,6 +64,7 @@ function PortraitImageContainer({
 }) {
   const [mediaPath, setMediaPath] = useState<string>('');
   const [hasError, setHasError] = useState(false);
+  const [isLandscape, setIsLandscape] = useState<boolean | null>(null);
 
   useEffect(() => {
     // Format the image number with leading zero (01, 02, 03, etc.)
@@ -102,15 +103,44 @@ function PortraitImageContainer({
     return <div className="relative w-full h-full bg-gray-200" />;
   }
 
+  // Handle image load to determine orientation
+  const handleImageLoad = (dimensions: { width: number; height: number; isLandscape: boolean }) => {
+    setIsLandscape(dimensions.isLandscape);
+    console.log('Image orientation detected:', dimensions.isLandscape ? 'landscape' : 'portrait');
+  };
+
+  // Landscape: max-height 707px, centered vertically and horizontally
+  // Portrait: max-height 964px, max-width 644px, aligned top right
+  const imageStyle: React.CSSProperties = isLandscape
+    ? {
+        maxHeight: '707px',
+        maxWidth: '996px',
+        objectFit: 'contain',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)'
+      }
+    : {
+        maxHeight: '964px',
+        maxWidth: '644px',
+        objectFit: 'contain',
+        objectPosition: 'top right',
+        position: 'absolute',
+        top: '0',
+        right: '0'
+      };
+
   return (
     <div className="relative w-full h-full">
       <SupabaseImage
         bucketName="Portfolio-VIsuals"
         imagePath={mediaPath}
         alt="Project"
-        className="absolute top-0 right-0 w-full h-full object-cover object-top-right pointer-events-none"
-        style={{ objectPosition: 'top right' }}
+        className="pointer-events-none"
+        style={imageStyle}
         onError={handleImageError}
+        onLoad={handleImageLoad}
       />
     </div>
   );
@@ -126,7 +156,7 @@ function ImageContainer({
   imageNumber: number;
 }) {
   return (
-    <div className="absolute flex flex-col items-end right-[412px] top-[30px] bottom-[287px] w-[998px]">
+    <div className="absolute flex flex-col items-center justify-center right-[412px] top-[30px] bottom-[287px] w-[998px] max-w-[996px]">
       <PortraitImageContainer projectId={projectId} filename={filename} imageNumber={imageNumber} />
     </div>
   );
