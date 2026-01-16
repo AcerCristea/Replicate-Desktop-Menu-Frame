@@ -65,6 +65,24 @@ function PortraitImageContainer({
   const [mediaPath, setMediaPath] = useState<string>('');
   const [hasError, setHasError] = useState(false);
   const [isLandscape, setIsLandscape] = useState<boolean | null>(null);
+  const [availableHeight, setAvailableHeight] = useState<number>(707); // default fallback
+
+  useEffect(() => {
+    // Calculate available height: viewport height - caption area (287px) - top margin (30px)
+    const calculateAvailableHeight = () => {
+      const viewportHeight = window.innerHeight;
+      const captionAreaHeight = 287;
+      const topMargin = 30;
+      const calculatedHeight = viewportHeight - captionAreaHeight - topMargin;
+      setAvailableHeight(calculatedHeight);
+      console.log('Available height for images:', calculatedHeight);
+    };
+
+    calculateAvailableHeight();
+    window.addEventListener('resize', calculateAvailableHeight);
+
+    return () => window.removeEventListener('resize', calculateAvailableHeight);
+  }, []);
 
   useEffect(() => {
     // Format the image number with leading zero (01, 02, 03, etc.)
@@ -107,13 +125,15 @@ function PortraitImageContainer({
   const handleImageLoad = (dimensions: { width: number; height: number; isLandscape: boolean }) => {
     setIsLandscape(dimensions.isLandscape);
     console.log('Image orientation detected:', dimensions.isLandscape ? 'landscape' : 'portrait');
+    console.log('Image dimensions:', dimensions);
   };
 
-  // Landscape: max-height 707px, centered vertically and horizontally
-  // Portrait: max-height 964px, max-width 644px, aligned top right
+  // Landscape: use calculated available height, centered vertically and horizontally
+  // Portrait: use calculated available height, max-width 400px, aligned top right
   const imageStyle: React.CSSProperties = isLandscape
     ? {
-        maxHeight: '707px',
+        height: `${availableHeight}px`,
+        width: 'auto',
         maxWidth: '996px',
         objectFit: 'contain',
         position: 'absolute',
@@ -122,8 +142,8 @@ function PortraitImageContainer({
         transform: 'translate(-50%, -50%)'
       }
     : {
-        maxHeight: '964px',
-        maxWidth: '644px',
+        maxHeight: `964px`,
+        maxWidth: '646px',
         objectFit: 'contain',
         objectPosition: 'top right',
         position: 'absolute',
