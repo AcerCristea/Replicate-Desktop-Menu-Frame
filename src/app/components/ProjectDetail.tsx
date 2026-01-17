@@ -262,7 +262,7 @@ function ProjectDetails({
   secondaryTags: string;
 }) {
   return (
-    <div className="absolute bottom-[90px] content-stretch flex flex-col gap-[20px] items-start justify-end left-[30px] w-[322px]">
+    <div className="absolute bottom-[60px] content-stretch flex flex-col gap-[20px] items-start justify-end left-[30px] w-[322px]">
       <div className="font-['Albert_Sans',sans-serif] font-semibold h-[20px] leading-[18px] relative shrink-0 text-[#cfd860] text-[16px] w-full">
         <p className="mb-0">{team}</p>
         <p className="mb-0">&nbsp;</p>

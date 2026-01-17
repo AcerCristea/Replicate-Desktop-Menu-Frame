@@ -12,6 +12,12 @@ const navItems = [
 export function Navigation() {
   const location = useLocation();
 
+  // Determine the dynamic label based on the current path
+  const activeItem = navItems.find(item => 
+    item.path === '/' ? location.pathname === '/' : location.pathname.startsWith(item.path)
+  );
+  const dynamicLabel = activeItem ? activeItem.label : 'Archive';
+
   return (
     <div className="fixed left-0 top-0 bottom-0 w-[240px] bg-[#cfd860] z-50">
       <div className="flex flex-col h-full px-[30px] py-[34px]">
@@ -46,24 +52,30 @@ export function Navigation() {
         
         <div className="flex-grow" />
 
-        <div className="flex items-end pb-0 pr-[10px] relative h-[650px]">
-          <div className="flex flex-col items-end w-full h-full justify-end">
-            <div className="flex h-[650px] items-center justify-center mr-[-10px] relative shrink-0 w-[74px]">
-              <div className="flex-none rotate-[270deg]">
-                <p className="font-['Albert_Sans'] font-bold text-[60px] tracking-[-2px] leading-[30px] text-[#d05d49] whitespace-nowrap">
-                  Archive
-                </p>
-              </div>
-            </div>
-            <div className="flex h-[131.354px] items-center justify-center mr-[-10px] relative shrink-0 w-[55.974px]">
-              <div className="flex-none rotate-[270deg]">
-                <p className="font-['Albert_Sans'] font-semibold text-[14px] leading-[16px] text-[#1e3239] whitespace-nowrap">
-                  1996-2026
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+{/* BOTTOM SECTION: Dynamic Label and Date aligned side-by-side */}
+<div className="flex items-end justify-end w-full pl-[30px] pb-[90px] border-[5px]">
+  
+  {/* Dynamic Vertical Label */}
+<div className="relative shrink-0 flex items-left justify-left w-[60px] border-[2px]">
+      <div className="rotate-[270deg] origin-left whitespace-nowrap">
+      <motion.p 
+        key={dynamicLabel}
+        initial={{ opacity: 1 }}
+        className="font-['Albert_Sans'] font-bold text-[60px] tracking-[-2px] leading-[0.8] text-[#d05d49] border-[9px]"
+      >
+        {dynamicLabel}
+      </motion.p>
+    </div>
+  </div>
+
+  {/* Date Label */}
+      <div className="rotate-[270deg] origin-left whitespace-nowrap">
+      <p className="font-['Albert_Sans'] font-semibold text-[14px] leading-[1] text-[#1e3239] border-[4px]">
+        1996-2026
+      </p>
+    </div>
+
+</div>
       </div>
     </div>
   );

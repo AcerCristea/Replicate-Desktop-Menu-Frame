@@ -252,34 +252,44 @@ export function ArchivePage() {
   };
 
   return (
-    <div className="bg-[#cfd860] min-h-screen w-full relative overflow-hidden">
-      {/* Background SVG with scroll animation */}
+// STEP 1: RESTORE FULL WIDTH HERE
+    // Removed ml-[240px] and w-[calc...] to eliminate the white bar
+    <div className="bg-[#cfd860] h-screen w-full relative overflow-hidden flex flex-col">
+      
+      {/* Background SVG */}
       <motion.div
-        className="absolute h-[1023.4px] right-[-452.39px] top-[-0.4px] w-[1059.95px] pointer-events-none"
+        className="absolute h-[100vh] left-[50vw] top-[0px] w-[1060px] pointer-events-none"
         style={{ opacity: svgOpacity }}
       >
-        <div className="absolute inset-0" style={{ "--fill-0": "rgba(104, 155, 161, 1)" } as React.CSSProperties}>
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1059.95 1023.4">
-            <path d={svgPaths.p39aca200} fill="var(--fill-0, #689BA1)" opacity="0.3" />
+<div className="h-full" style={{ "--fill-0": "rgba(104, 155, 161, 100)" } as React.CSSProperties}>
+          <svg 
+            className="h-full w-auto" 
+            fill="none" 
+            preserveAspectRatio="xMinYMin meet" 
+            viewBox="0 0 1059.95 1023.4"
+          >
+            <path d={svgPaths.p39aca200} fill="var(--fill-0, #689BA1)" opacity="1" />
           </svg>
         </div>
       </motion.div>
 
-      {/* Archive List Container */}
-      <div className="absolute content-stretch flex gap-[30px] items-start left-0 pb-0 pt-[30px] px-[30px] top-0 right-0">
+      {/* STEP 2: APPLY OFFSET HERE */}
+      {/* Added pl-[240px]. This reserves space for the Nav but keeps centering correct relative to remaining space. */}
+      <div className="relative flex justify-center items-start gap-[30px] w-full h-full pt-[30px] pr-[240px]">
+        
         {/* Left Black Bar */}
         <motion.div
-          className="bg-[#1e3239] h-[960px] shrink-0 w-[170px]"
+          className="bg-[#1e3239] h-full shrink-0 w-[170px]"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           style={{ transformOrigin: "top" }}
         />
 
-        {/* Client Block */}
+        {/* Center Column (Scrollable) */}
         <div
           ref={scrollRef}
-          className="content-stretch flex flex-col gap-[10px] h-[960px] items-start overflow-x-clip overflow-y-auto relative shrink-0"
+          className="flex flex-col gap-[10px] h-full items-start overflow-x-hidden overflow-y-auto relative shrink-0 w-[580px]"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -287,7 +297,7 @@ export function ArchivePage() {
           } as React.CSSProperties}
         >
           <style>{`
-            .content-stretch::-webkit-scrollbar {
+            div::-webkit-scrollbar {
               display: none;
             }
           `}</style>
@@ -297,7 +307,7 @@ export function ArchivePage() {
             onFilterChange={setActiveFilter}
           />
 
-          <div className="content-stretch flex flex-col gap-[15px] items-start overflow-x-clip overflow-y-auto relative shrink-0 w-[570px] pb-[50px]">
+          <div className="flex flex-col gap-[15px] items-start relative shrink-0 w-[580px] pb-[50px]">
             {loading ? (
               <LoadingSkeleton />
             ) : projects.length === 0 ? (
@@ -326,7 +336,7 @@ export function ArchivePage() {
 
         {/* Right Black Bar */}
         <motion.div
-          className="bg-[#1e3239] h-[960px] shrink-0 w-[170px]"
+          className="bg-[#1e3239] h-full shrink-0 w-[170px]"
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
