@@ -6,7 +6,7 @@ const navItems = [
   { label: 'Approach', path: '/approach' },
   { label: 'Selected Works', path: '/selected-works' },
   { label: 'White Space', path: '/white-space' },
-  { label: 'Archive', path: '/' },
+  { label: 'Archive', path: '/archive' },
 ];
 
 export function Navigation() {
