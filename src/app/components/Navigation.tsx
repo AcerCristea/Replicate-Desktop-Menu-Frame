@@ -53,10 +53,10 @@ export function Navigation() {
         <div className="flex-grow" />
 
 {/* BOTTOM SECTION: Dynamic Label and Date aligned side-by-side */}
-<div className="flex items-end justify-end w-full pl-[400px]">
+<div className="relative w-full">
 
   {/* Single rotated container for both texts */}
-  <div className="rotate-[270deg] origin-bottom-left whitespace-nowrap flex flex-col items-start gap-[10px]">
+  <div className="absolute bottom-0 left-[90px] rotate-[270deg] origin-bottom-left whitespace-nowrap flex flex-col items-start gap-[10px]">
     <motion.p
       key={dynamicLabel}
       initial={{ opacity: 1 }}

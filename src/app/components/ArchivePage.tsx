@@ -203,6 +203,7 @@ export function ArchivePage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilter, setActiveFilter] = useState<FilterColumn>('CLIENT');
+  const [isReversed, setIsReversed] = useState(false);
   const navigate = useNavigate();
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -235,17 +236,32 @@ export function ArchivePage() {
 
     switch (activeFilter) {
       case 'CLIENT':
-        return sorted.sort((a, b) => a.ClientName.localeCompare(b.ClientName));
+        sorted.sort((a, b) => a.ClientName.localeCompare(b.ClientName));
+        break;
       case 'PROJECT TYPE':
-        return sorted.sort((a, b) => a.PrimaryTag.localeCompare(b.PrimaryTag));
+        sorted.sort((a, b) => a.PrimaryTag.localeCompare(b.PrimaryTag));
+        break;
       case 'INDUSTRY':
-        return sorted.sort((a, b) => a.Industry.localeCompare(b.Industry));
+        sorted.sort((a, b) => a.Industry.localeCompare(b.Industry));
+        break;
       case 'DATE':
-        return sorted.sort((a, b) => b.Date.localeCompare(a.Date));
-      default:
-        return sorted;
+        sorted.sort((a, b) => b.Date.localeCompare(a.Date));
+        break;
     }
-  }, [projects, activeFilter]);
+
+    return isReversed ? sorted.reverse() : sorted;
+  }, [projects, activeFilter, isReversed]);
+
+  const handleFilterChange = (filter: FilterColumn) => {
+    if (filter === activeFilter) {
+      // Toggle reverse order if clicking the same filter
+      setIsReversed(!isReversed);
+    } else {
+      // Switch to new filter and reset to normal order
+      setActiveFilter(filter);
+      setIsReversed(false);
+    }
+  };
 
   const handleProjectClick = (projectId: string) => {
     navigate(`/project/${projectId}`);
@@ -304,7 +320,7 @@ export function ArchivePage() {
 
           <ArchiveHeader
             activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
+            onFilterChange={handleFilterChange}
           />
 
           <div className="flex flex-col gap-[15px] items-start relative shrink-0 w-[580px] pb-[50px]">
