@@ -53,27 +53,21 @@ export function Navigation() {
         <div className="flex-grow" />
 
 {/* BOTTOM SECTION: Dynamic Label and Date aligned side-by-side */}
-<div className="flex items-end justify-end w-full pl-[30px] pb-[90px] border-[5px]">
-  
-  {/* Dynamic Vertical Label */}
-<div className="relative shrink-0 flex items-left justify-left w-[60px] border-[2px]">
-      <div className="rotate-[270deg] origin-left whitespace-nowrap">
-      <motion.p 
-        key={dynamicLabel}
-        initial={{ opacity: 1 }}
-        className="font-['Albert_Sans'] font-bold text-[60px] tracking-[-2px] leading-[0.8] text-[#d05d49] border-[9px]"
-      >
-        {dynamicLabel}
-      </motion.p>
-    </div>
-  </div>
+<div className="flex items-end justify-end w-full pl-[400px]">
 
-  {/* Date Label */}
-      <div className="rotate-[270deg] origin-left whitespace-nowrap">
-      <p className="font-['Albert_Sans'] font-semibold text-[14px] leading-[1] text-[#1e3239] border-[4px]">
-        1996-2026
-      </p>
-    </div>
+  {/* Single rotated container for both texts */}
+  <div className="rotate-[270deg] origin-bottom-left whitespace-nowrap flex flex-col items-start gap-[10px]">
+    <motion.p
+      key={dynamicLabel}
+      initial={{ opacity: 1 }}
+      className="font-['Albert_Sans'] font-bold text-[60px] tracking-[-2px] leading-[0.8] text-[#d05d49]"
+    >
+      {dynamicLabel}
+    </motion.p>
+    <p className="font-['Albert_Sans'] font-semibold text-[14px] leading-[1] text-[#1e3239]">
+      1996-2026
+    </p>
+  </div>
 
 </div>
       </div>
