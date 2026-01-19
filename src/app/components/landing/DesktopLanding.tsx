@@ -119,56 +119,109 @@ function RightSidebar() {
   );
 }
 
-// Decorative Shape Components - Sample shapes (abbreviated for file size)
+// Decorative Shape Components - ALL shapes from the Figma design
 function DecoShapes() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Top scattered shapes */}
-      <motion.div
-        className="absolute left-[280px] size-[30px] top-[246px]"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-      >
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-          <path d="M0 0H30V30H0V0Z" fill="#E6E6E6" />
-        </svg>
+      <motion.div className="absolute left-[280px] size-[30px] top-[246px]" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30"><path d="M0 0H30V30H0V0Z" fill="#E6E6E6" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[982px] size-[30px] top-[123px]" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30"><path d={svgPaths.pf149a00} fill="#D05D49" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[694px] size-[30px] top-[54px]" initial={{ opacity: 0, rotate: -90 }} animate={{ opacity: 1, rotate: 0 }} transition={{ delay: 0.5, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30"><path d="M0 30H30V0L0 30Z" fill="#CFD860" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[340px] size-[30px] top-[72px]" initial={{ opacity: 0, rotate: 180 }} animate={{ opacity: 1, rotate: 180 }} transition={{ delay: 0.45, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30"><path d="M0 30H30V0L0 30Z" fill="#CFD860" /></svg>
       </motion.div>
 
-      <motion.div
-        className="absolute left-[982px] size-[30px] top-[123px]"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-      >
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-          <path d={svgPaths.pf149a00} fill="#D05D49" />
-        </svg>
+      {/* Medium and Large shapes - upper section */}
+      <motion.div className="absolute left-[266px] top-[135px] h-[30px] w-[105px]" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 105 30"><path d="M105 0L75 30H0L30 0H105Z" fill="#CAE0E2" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[521px] size-[60px] top-[276px]" initial={{ opacity: 0, rotate: 90 }} animate={{ opacity: 1, rotate: 0 }} transition={{ delay: 0.6, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 60 60"><path d={svgPaths.p382e0200} fill="#C37EA2" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[338px] top-[291px] h-[30px] w-[85px]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 85 30"><path d="M85 0L55 30H0V0H85Z" fill="#6BCD72" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[376px] top-[198px] h-[30px] w-[60px]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 60 30"><path d={svgPaths.p3d95ac80} fill="#B7E7BA" /></svg>
       </motion.div>
 
-      <motion.div
-        className="absolute left-[694px] size-[30px] top-[54px]"
-        initial={{ opacity: 0, rotate: -90 }}
-        animate={{ opacity: 1, rotate: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-      >
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-          <path d="M0 30H30V0L0 30Z" fill="#CFD860" />
-        </svg>
+      {/* Rotated rectangle */}
+      <motion.div className="absolute left-[533px] top-[137px] w-[30px] h-[90px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.5 }}>
+        <div className="rotate-[90deg]"><svg className="block w-[90px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 90 30"><path d={svgPaths.p16806300} fill="#CFD860" /></svg></div>
       </motion.div>
 
-      <motion.div
-        className="absolute left-[340px] size-[30px] top-[72px]"
-        initial={{ opacity: 0, rotate: 180 }}
-        animate={{ opacity: 1, rotate: 180 }}
-        transition={{ delay: 0.45, duration: 0.5 }}
-      >
-        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30">
-          <path d="M0 30H30V0L0 30Z" fill="#CFD860" />
-        </svg>
+      {/* Vertical shapes */}
+      <motion.div className="absolute left-[644px] top-[138px] w-[30px] h-[90px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block w-[90px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 90 30"><path d={svgPaths.p1f04a300} fill="#8F79B9" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[781px] top-[197px] w-[30px] h-[60px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.75, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block w-[60px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 60 30"><path d={svgPaths.pc358e00} fill="#E6E6E6" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[952px] top-[291px] h-[30px] w-[60px]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 60 30"><path d={svgPaths.p3d95ac80} fill="#B7E7BA" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[1139px] top-[286px] w-[30px] h-[150px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block w-[150px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 150 30"><path d="M120 30H0L30 0H150L120 30Z" fill="#0076C2" /></svg></div>
       </motion.div>
 
-      {/* Add more shapes as needed - keeping file concise */}
+      {/* Diagonal/rotated shapes - upper section */}
+      <motion.div className="absolute left-[790px] top-[66px] w-[148.492px] h-[148.492px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.5 }}>
+        <div className="rotate-[45deg]"><svg className="block w-[180px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 180 30"><path d={svgPaths.p3b869400} fill="#16A19D" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[1086px] top-[135px] w-[84.853px] h-[84.853px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.95, duration: 0.5 }}>
+        <div className="rotate-[315deg]"><svg className="block w-[90px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 90 30"><path d={svgPaths.p219f1280} fill="#8F79B9" /></svg></div>
+      </motion.div>
+
+      {/* Lower section shapes */}
+      <motion.div className="absolute left-[245px] top-[900px] h-[30px] w-[150px]" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 150 30"><path d="M120 30H0L30 0H150L120 30Z" fill="#0076C2" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[422px] top-[943px] h-[30px] w-[120px]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.05, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 120 30"><path d="M120 0L90 30H0L30 0H120Z" fill="#AACCD0" /></svg>
+      </motion.div>
+      <motion.div className="absolute left-[541px] size-[30px] top-[756px]" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.1, duration: 0.5 }}>
+        <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30"><path d="M0 0H30V30H0V0Z" fill="#E6E6E6" /></svg>
+      </motion.div>
+
+      {/* Lower curves and complex shapes */}
+      <motion.div className="absolute left-[659px] top-[879px] size-[60px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 60 60"><path d={svgPaths.p382e0200} fill="#C37EA2" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[969px] top-[900px] size-[60px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.15, duration: 0.5 }}>
+        <div className="rotate-[270deg] scale-y-[-100%]"><svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 60 60"><path d={svgPaths.p382e0200} fill="#C37EA2" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[1139px] top-[792px] w-[42.426px] h-[42.426px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.5 }}>
+        <div className="rotate-[315deg]"><svg className="block w-[30px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 30 30"><path d="M0 0H30V30H0V0Z" fill="#E6E6E6" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[794px] top-[834px] w-[30px] h-[90px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.15, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block w-[90px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 90 30"><path d="M90 0L60 30H0V0H90Z" fill="#8F79B9" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[873px] top-[834px] w-[30px] h-[150px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block w-[150px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 150 30"><path d="M120 30H0L30 0H150L120 30Z" fill="#0076C2" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[442px] top-[762px] w-[30px] h-[60px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1, duration: 0.5 }}>
+        <div className="rotate-[270deg]"><svg className="block w-[60px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 60 30"><path d={svgPaths.p3d95ac80} fill="#B7E7BA" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[489px] top-[855px] w-[30px] h-[60px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.15, duration: 0.5 }}>
+        <div className="rotate-[90deg]"><svg className="block w-[60px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 60 30"><path d={svgPaths.p3d95ac80} fill="#B7E7BA" /></svg></div>
+      </motion.div>
+
+      {/* Diagonal shapes - lower section */}
+      <motion.div className="absolute left-[541px] top-[779px] w-[127.279px] h-[127.279px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.5 }}>
+        <div className="rotate-[315deg]"><svg className="block w-[150px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 150 30"><path d="M120 30H0L30 0H150L120 30Z" fill="#0076C2" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[266px] top-[737px] w-[127.279px] h-[127.279px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.25, duration: 0.5 }}>
+        <div className="rotate-[45deg]"><svg className="block w-[150px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 125.13 30"><path d={svgPaths.p38ca7480} fill="#E6E6E6" /></svg></div>
+      </motion.div>
+      <motion.div className="absolute left-[965px] top-[744px] w-[84.853px] h-[84.853px] flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3, duration: 0.5 }}>
+        <div className="rotate-[135deg]"><svg className="block w-[90px] h-[30px]" fill="none" preserveAspectRatio="none" viewBox="0 0 90 30"><path d={svgPaths.p39670a80} fill="#8F79B9" /></svg></div>
+      </motion.div>
     </div>
   );
 }
@@ -221,7 +274,8 @@ export function DesktopLanding() {
         transition={{ delay: 1.2 }}
       >
         <p className="m-0 leading-[15px]">
-          All work designed and produced by Nick Cristea unless otherwise credited
+          All work designed and produced by Nick Cristea unless otherwise
+          credited
         </p>
       </motion.div>
     </div>
