@@ -202,13 +202,35 @@ function ArchiveHeader({
 export function ArchivePage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeFilter, setActiveFilter] = useState<FilterColumn>('CLIENT');
+  const [activeFilter, setActiveFilter] = useState<FilterColumn>('DATE');
   const [isReversed, setIsReversed] = useState(false);
   const navigate = useNavigate();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const { scrollYProgress } = useScroll({ container: scrollRef });
   const svgOpacity = useTransform(scrollYProgress, [0, 0.2], [0.3, 0.15]);
+
+  // Save scroll position before navigating away
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+    if (!scrollElement) return;
+
+    const handleScroll = () => {
+      sessionStorage.setItem('archiveScrollPosition', scrollElement.scrollTop.toString());
+    };
+
+    scrollElement.addEventListener('scroll', handleScroll);
+    return () => scrollElement.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Restore scroll position on mount
+  useEffect(() => {
+    const savedPosition = sessionStorage.getItem('archiveScrollPosition');
+    if (savedPosition && scrollRef.current) {
+      scrollRef.current.scrollTop = parseInt(savedPosition, 10);
+    }
+  }, [loading]);
 
   useEffect(() => {
     async function fetchProjects() {

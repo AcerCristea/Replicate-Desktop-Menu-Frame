@@ -37,6 +37,9 @@ function ProjectInformation({
   overview: string;
   description: string;
 }) {
+  // Split description by line breaks and create paragraphs
+  const descriptionParagraphs = description.split('\n').filter(para => para.trim() !== '');
+
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-end left-[1088px] top-[30px] w-[321px] max-h-[calc(100vh-347px)] overflow-y-auto scrollbar-hide pr-1">
       <p className="font-['Albert_Sans',sans-serif] font-bold leading-[30px] min-w-full relative shrink-0 text-[#1e3239] text-[36px] tracking-[-2px] w-[calc(100%-30px)]">
@@ -46,7 +49,11 @@ function ProjectInformation({
         {overview}
       </p>
       <div className="font-['Albert_Sans',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#1e3239] text-[18px] w-full">
-        <p>{description}</p>
+        {descriptionParagraphs.map((paragraph, index) => (
+          <p key={index} className="mb-4 last:mb-0">
+            {paragraph}
+          </p>
+        ))}
       </div>
     </div>
   );
@@ -539,7 +546,7 @@ export function ProjectDetail() {
   }, [id]);
 
   const handleClose = () => {
-    navigate('/');
+    navigate('/archive');
   };
 
   if (loading) {
