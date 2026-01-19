@@ -644,21 +644,9 @@ function CentralContent() {
         }}
       >
         {/* Custom Geometric Logo */}
-        <div className="relative w-[442px] h-[116px] mx-auto mb-[55px]">
+        <div className="relative w-[442px] h-[116px] mx-auto">
           <Group123 />
         </div>
-
-        {/* Tagline */}
-        <motion.div
-          className="font-['Albert_Sans',sans-serif] font-normal text-[#e6e6e6] text-[18px] tracking-[-0.54px] leading-[22px]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-        >
-          <p className="m-0">Potent</p>
-          <p className="m-0">products &</p>
-          <p className="m-0">experiences</p>
-        </motion.div>
       </motion.div>
     </div>
   );
