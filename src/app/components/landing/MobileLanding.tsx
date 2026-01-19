@@ -149,7 +149,7 @@ function CentralContent() {
           <Group123Mobile />
         </div>
       </motion.div>
-      <motion.div className="font-['Albert_Sans',sans-serif] font-bold text-[#e6e6e6] text-center mt-[90px]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }}>
+      <motion.div className="font-['Albert_Sans',sans-serif] font-normal text-[#e6e6e6] text-center mt-[90px]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }}>
         <p className="m-0 text-[16px] tracking-[-0.48px] leading-[20px]">Potent</p>
         <p className="m-0 text-[16px] tracking-[-0.48px] leading-[20px]">products &</p>
         <p className="m-0 text-[16px] tracking-[-0.48px] leading-[20px]">experiences</p>

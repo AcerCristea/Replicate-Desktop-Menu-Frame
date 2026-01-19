@@ -78,9 +78,9 @@ function LeftColumnContents() {
         <div className="flex-none rotate-[270deg]">
           <div className="flex flex-col font-['Albert_Sans:Bold',sans-serif] font-bold h-[80px] justify-center leading-[0] relative text-[#d05d49] text-[60px] tracking-[-2px] w-[514px]">
             <p className="css-4hzbpn">
-              <span className="leading-[30px] text-[#0076c2]">Nick</span>
-              <span className="leading-[30px] text-[#6bb0cd]">Cristea</span>
-              <span className="leading-[30px] text-[#b7d8e7]">Selflux</span>
+              <span className="leading-[30px] text-[#6bb0cd]">Nick</span>
+              <span className="leading-[30px] text-[#aaccd0]">Cristea</span>
+              <span className="leading-[30px] text-[#e6e6e6]">Selflux</span>
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ function LeftColumnContents() {
 export default function LeftColumn() {
   return (
     <div className="relative size-full" data-name="LeftColumn">
-      <div className="absolute bg-[#00375a] h-[856px] left-0 top-0 w-[180px]" data-name="LeftColumnBgrd" />
+      <div className="absolute bg-[#00375a] h-full left-0 top-0 w-[180px]" data-name="LeftColumnBgrd" />
       <LeftColumnContents />
     </div>
   );

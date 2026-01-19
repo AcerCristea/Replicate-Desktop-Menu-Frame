@@ -16,7 +16,7 @@ function Close() {
 export default function RightColumn() {
   return (
     <div className="cursor-pointer relative size-full" data-name="RightColumn">
-      <button className="absolute bg-[#00375a] block h-[856px] right-0 top-0 w-[180px]" data-name="RightColumnBgrd" />
+      <button className="absolute bg-[#00375a] block h-full right-0 top-0 w-[180px]" data-name="RightColumnBgrd" />
       <Close />
     </div>
   );
