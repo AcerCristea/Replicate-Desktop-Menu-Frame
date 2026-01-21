@@ -659,7 +659,7 @@ function RightSidebar() {
       animate={{ x: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="absolute right-[15px] top-[430px] w-[97px] h-[136px]">
+      <div className="absolute right-[0px] top-[430px] w-[97px] h-[136px]">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
