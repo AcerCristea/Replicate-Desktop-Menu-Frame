@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 import svgPaths from '../../../imports/svg-landing';
 import Group123 from '../../../imports/Group123';
 
-// Navigation Menu Items
-function NavMenuItem({
+// Navigation Button Component
+function NavButton({
   text,
   path,
   index,
@@ -15,33 +15,20 @@ function NavMenuItem({
 }) {
   return (
     <Link to={path}>
-      <motion.div
-        className="h-[30px] w-[219px] relative block cursor-pointer group"
+      <motion.button
+        className="font-['Albert_Sans',sans-serif] font-light text-[#aaccd0] text-[24px] tracking-[-1px] leading-[10px] hover:text-[#e6e6e6] transition-colors cursor-pointer bg-transparent border-none text-left px-0 py-1"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: index * 0.1 }}
-        whileHover={{ x: 10 }}
       >
-        <div className="absolute content-stretch flex items-end left-0 right-[-0.91%] top-[calc(50%-3px)] translate-y-[-50%]">
-          <div className="font-['Albert_Sans',sans-serif] font-light h-[24px] leading-[30px] relative shrink-0 text-[#aaccd0] text-[24px] tracking-[-1px] w-[180px] group-hover:text-[#e6e6e6] transition-colors">
-            <p className="mb-0">{text}</p>
-          </div>
-        </div>
-      </motion.div>
+        {text}
+      </motion.button>
     </Link>
   );
 }
 
-// Left Navigation Sidebar
+// Left Sidebar with Branding
 function LeftSidebar() {
-  const menuItems = [
-    { label: 'About', path: '/about' },
-    { label: 'Approach', path: '/approach' },
-    { label: 'Selected Works', path: '/selected-works' },
-    { label: 'White Space', path: '/white-space' },
-    { label: 'Archive', path: '/archive' },
-  ];
-
   return (
     <motion.div
       className="bg-[#00375a] content-stretch flex flex-col h-full items-start px-[30px] py-[34px] shadow-[10px_4px_40px_0px_rgba(0,0,0,0.25)] shrink-0 w-[210px]"
@@ -50,24 +37,6 @@ function LeftSidebar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start min-h-px min-w-px relative w-[180px]">
-        {/* Navigation Stack */}
-        <div className="h-[210px] overflow-clip relative shrink-0 w-full">
-          <div className="absolute h-[150px] left-0 top-0 w-[210px] space-y-0">
-            {menuItems.map((item, index) => (
-              <div
-                key={item.path}
-                style={{
-                  position: 'absolute',
-                  top: `${index * 30}px`,
-                  left: 0,
-                }}
-              >
-                <NavMenuItem text={item.label} path={item.path} index={index} />
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Bottom Lockup - Rotated Text */}
         <div className="content-stretch flex flex-[1_0_0] items-end min-h-px min-w-px pl-0 pr-[10px] py-0 relative">
           <div className="flex h-[650px] items-center justify-center mr-[-10px] relative shrink-0 w-[74px]">
@@ -246,6 +215,35 @@ function CentralContent() {
   );
 }
 
+// Navigation Component
+function Navigation() {
+  const menuItems = [
+    { label: 'About', path: '/about' },
+    { label: 'Approach', path: '/approach' },
+    { label: 'Selected Works', path: '/selected-works' },
+    { label: 'White Space', path: '/white-space' },
+    { label: 'Archive', path: '/archive' },
+  ];
+
+  return (
+    <motion.nav
+      className="absolute left-[30px] top-[34px] z-10 flex flex-col gap-2"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3 }}
+    >
+      {menuItems.map((item, index) => (
+        <NavButton
+          key={item.path}
+          text={item.label}
+          path={item.path}
+          index={index}
+        />
+      ))}
+    </motion.nav>
+  );
+}
+
 // Main Desktop Landing Component
 export function DesktopLanding() {
   return (
@@ -255,6 +253,9 @@ export function DesktopLanding() {
 
       {/* Central Content */}
       <CentralContent />
+
+      {/* Navigation */}
+      <Navigation />
 
       {/* Sidebars Container */}
       <div className="absolute inset-0 flex justify-between pointer-events-none">
