@@ -481,7 +481,7 @@ export default function Group() {
     <div className="relative size-full">
       <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[40px] leading-[14px] left-[158px] text-[#e6e6e6] text-[14px] top-[80px] w-[100px]">{`Potent products & experiences`}</p>
       <Component90Curve />
-      <div className="absolute flex items-center justify-center left-[177.81px] size-[22.089px] top-[55.22px]" style={{ "--transform-inner-width": "300", "--transform-inner-height": "150" } as React.CSSProperties}>
+      <div className="absolute flex items-center justify-center left-[178px] size-[22.089px] top-[55.22px]" style={{ "--transform-inner-width": "300", "--transform-inner-height": "150" } as React.CSSProperties}>
         <div className="flex-none rotate-[270deg]">
           <Component90Curve1 />
         </div>

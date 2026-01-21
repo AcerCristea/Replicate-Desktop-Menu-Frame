@@ -479,14 +479,14 @@ function MediumParallela() {
 export default function Group() {
   return (
     <div className="relative size-full">
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[60px] leading-[18px] left-[250px] text-[#e6e6e6] text-[18px] text-left top-[145px] w-[130px]">{`Potent products & experiences`}</p>
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[60px] leading-[20px] left-[240px] text-[#e6e6e6] text-[18px] text-left top-[125px] w-[130px]">{`Potent products & experiences`}</p>
       <Component90Curve />
       <div className="absolute flex items-center justify-center left-[266.72px] size-[33.133px] top-[82.83px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[270deg]">
           <Component90Curve1 />
         </div>
       </div>
-      <div className="absolute flex items-center justify-center left-[299.85px] size-[33.133px] top-[82.83px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
+      <div className="absolute flex items-center justify-center left-[299.664px] size-[33.133px] top-[82.83px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-[270deg] scale-y-[-100%]">
           <Component90Curve2 />
         </div>

@@ -53,20 +53,18 @@ function MenuOverlay({
             </div>
 
             {/* Menu Items */}
-            <div className="space-y-[12px]">
+            <div className="flex flex-col gap-2">
               {menuItems.map((item, index) => (
                 <Link key={item.path} to={item.path}>
-                  <motion.div
-                    className="block w-full text-left cursor-pointer bg-transparent border-none p-0 group"
+                  <motion.button
+                    className="font-['Albert_Sans',sans-serif] font-light text-[#aaccd0] text-[20px] tracking-[-0.6px] leading-[20px] hover:text-[#e6e6e6] transition-colors cursor-pointer bg-transparent border-none text-left px-0 py-1 w-full"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.08 }}
                     whileHover={{ x: 10 }}
                   >
-                    <p className="font-['Albert_Sans',sans-serif] font-light text-[#aaccd0] text-[20px] tracking-[-0.6px] m-0 group-hover:text-[#e6e6e6] transition-colors">
-                      {item.label}
-                    </p>
-                  </motion.div>
+                    {item.label}
+                  </motion.button>
                 </Link>
               ))}
             </div>

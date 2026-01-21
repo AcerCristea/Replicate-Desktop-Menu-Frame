@@ -1,72 +1,36 @@
-function MobileMainMenu() {
-  return (
-    <div className="h-[20px] relative shrink-0 w-full" data-name="MobileMainMenu">
-      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[24px] leading-[24px] left-0 text-[#aaccd0] text-[18px] top-0 w-[180px]">
-        <p className="css-4hzbpn mb-0">About</p>
-        <p className="css-4hzbpn">&nbsp;</p>
-      </div>
-    </div>
-  );
-}
+import { Link } from 'react-router-dom';
 
-function MobileMainMenu1() {
+function NavButton({
+  text,
+  path,
+}: {
+  text: string;
+  path: string;
+}) {
   return (
-    <div className="h-[20px] relative shrink-0 w-full" data-name="MobileMainMenu">
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Light',sans-serif] font-light h-[24px] leading-[24px] left-0 text-[#aaccd0] text-[18px] top-0 w-[180px]">Approach</p>
-    </div>
-  );
-}
-
-function MobileMainMenu2() {
-  return (
-    <div className="h-[20px] relative shrink-0 w-full" data-name="MobileMainMenu">
-      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[24px] leading-[24px] left-0 text-[#aaccd0] text-[18px] top-0 w-[180px]">
-        <p className="css-4hzbpn mb-0">Selected Works</p>
-        <p className="css-4hzbpn">&nbsp;</p>
-      </div>
-    </div>
-  );
-}
-
-function MobileMainMenu3() {
-  return (
-    <div className="h-[20px] relative shrink-0 w-full" data-name="MobileMainMenu">
-      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[24px] leading-[24px] left-0 text-[#aaccd0] text-[18px] top-0 w-[180px]">
-        <p className="css-4hzbpn mb-0">White Space</p>
-        <p className="css-4hzbpn">&nbsp;</p>
-      </div>
-    </div>
-  );
-}
-
-function MobileMainMenu4() {
-  return (
-    <div className="h-[20px] relative shrink-0 w-full" data-name="MobileMainMenu">
-      <div className="absolute font-['Albert_Sans:Bold',sans-serif] font-bold h-[24px] leading-[24px] left-0 text-[#aaccd0] text-[18px] top-0 w-[180px]">
-        <p className="css-4hzbpn mb-0">Archive</p>
-        <p className="css-4hzbpn">&nbsp;</p>
-      </div>
-    </div>
-  );
-}
-
-function NavStack() {
-  return (
-    <div className="absolute content-stretch flex flex-col gap-[5px] items-start left-0 pb-0 pt-[10px] px-0 top-[-10px] w-[180px]" data-name="NavStack">
-      <MobileMainMenu />
-      <MobileMainMenu1 />
-      <MobileMainMenu2 />
-      <MobileMainMenu3 />
-      <MobileMainMenu4 />
-    </div>
+    <Link to={path}>
+      <button className="font-['Albert_Sans',sans-serif] font-light text-[#aaccd0] text-[18px] leading-[10px] hover:text-[#e6e6e6] transition-colors cursor-pointer bg-transparent border-none text-left px-0 py-1 w-full">
+        {text}
+      </button>
+    </Link>
   );
 }
 
 function MobileMainNav() {
+  const menuItems = [
+    { label: 'About', path: '/about' },
+    { label: 'Approach', path: '/approach' },
+    { label: 'Selected Works', path: '/selected-works' },
+    { label: 'White Space', path: '/white-space' },
+    { label: 'Archive', path: '/archive' },
+  ];
+
   return (
-    <div className="h-[225px] overflow-clip relative shrink-0 w-full" data-name="MobileMainNav">
-      <NavStack />
-    </div>
+    <nav className="flex flex-col gap-2 w-full" data-name="MobileMainNav">
+      {menuItems.map((item) => (
+        <NavButton key={item.path} text={item.label} path={item.path} />
+      ))}
+    </nav>
   );
 }
 
