@@ -36,16 +36,14 @@ function MobileMainNav() {
 
 function LeftColumnContents() {
   return (
-    <div className="absolute content-stretch flex flex-col h-[764px] items-start justify-between left-[18px] top-[54px] w-[162px]" data-name="LeftColumnContents">
+    <div className="absolute content-stretch flex flex-col items-start justify-between left-[18px] top-[54px] bottom-[20px] w-[162px]" data-name="LeftColumnContents">
       <MobileMainNav />
       <div className="flex h-[514px] items-center justify-center relative shrink-0 w-[80px]" style={{ "--transform-inner-width": "125.28125", "--transform-inner-height": "42.65625" } as React.CSSProperties}>
         <div className="flex-none rotate-[270deg]">
-          <div className="flex flex-col font-['Albert_Sans:Bold',sans-serif] font-bold h-[80px] justify-center leading-[0] relative text-[#d05d49] text-[60px] tracking-[-2px] w-[514px]">
-            <p className="css-4hzbpn">
-              <span className="leading-[30px] text-[#6bb0cd]">Nick</span>
-              <span className="leading-[30px] text-[#aaccd0]">Cristea</span>
-              <span className="leading-[30px] text-[#e6e6e6]">Selflux</span>
-            </p>
+          <div className="font-['Albert_Sans',sans-serif] font-bold text-[60px] tracking-[-2px] whitespace-nowrap">
+            <span className="text-[#6bb0cd]">Nick</span>
+            <span className="text-[#aaccd0]">Cristea</span>
+            <span className="text-[#e6e6e6]">Selflux</span>
           </div>
         </div>
       </div>

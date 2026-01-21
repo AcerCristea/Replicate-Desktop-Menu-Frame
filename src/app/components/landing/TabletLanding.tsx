@@ -70,10 +70,10 @@ function MenuOverlay({
             </div>
 
             {/* Bottom Text - Rotated */}
-            <div className="flex-1 flex items-end justify-start mt-auto mb-[60px]">
+            <div className="flex-1 flex items-end justify-start mt-auto mb-[0px]">
               <div className="flex h-[400px] items-center justify-center w-[60px]">
                 <div className="flex-none rotate-[270deg]">
-                  <div className="font-['Albert_Sans',sans-serif] font-bold text-[40px] tracking-[-1.6px] whitespace-nowrap">
+                  <div className="font-['Albert_Sans',sans-serif] font-bold text-[50px] tracking-[-1.6px] whitespace-nowrap">
                     <span className="text-[#6bb0cd]">Nick</span>
                     <span className="text-[#aaccd0]">Cristea</span>
                     <span className="text-[#e6e6e6]">Selflux</span>
