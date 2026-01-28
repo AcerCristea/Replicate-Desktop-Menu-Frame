@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\acerc\\\\Downloads\\\\Replicate Desktop Menu Frame\\\\src\\\\app\\\\components\\\\landing\"\" && echo \"---\" && dir \"C:UsersacercDownloadsReplicate Mobile Framesrcimports\"\")"
+    ]
+  }
+}

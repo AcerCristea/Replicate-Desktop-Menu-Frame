@@ -3,16 +3,18 @@ import { Navigation } from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
 import { ArchivePage } from "./components/ArchivePage";
 import { ProjectDetail } from "./components/ProjectDetail";
+import { AboutPage } from "./components/AboutPage";
 
 function AppContent() {
   const location = useLocation();
   const isProjectPage = location.pathname.startsWith('/project/');
   const isLandingPage = location.pathname === '/';
+  const isAboutPage = location.pathname === '/about';
 
   return (
     <div className="size-full flex bg-[#e6e6e6]">
-      {!isProjectPage && !isLandingPage && <Navigation />}
-      <div className={isProjectPage || isLandingPage ? "flex-1" : "flex-1 ml-[240px]"}>
+      {!isProjectPage && !isLandingPage && !isAboutPage && <Navigation />}
+      <div className={isProjectPage || isLandingPage || isAboutPage ? "flex-1" : "flex-1 ml-[240px]"}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/archive" element={<ArchivePage />} />
@@ -22,7 +24,7 @@ function AppContent() {
           />
           <Route
             path="/about"
-            element={<PlaceholderPage title="About" />}
+            element={<AboutPage />}
           />
           <Route
             path="/approach"
