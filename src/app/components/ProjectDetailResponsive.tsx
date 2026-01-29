@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ProjectDetail } from './ProjectDetail';
 import { ProjectDetailTablet } from './ProjectDetailTablet';
+import { ProjectDetailMobile } from './ProjectDetailMobile';
 
 export function ProjectDetailResponsive() {
   const [windowWidth, setWindowWidth] = useState(
@@ -17,11 +18,13 @@ export function ProjectDetailResponsive() {
   }, []);
 
   // Breakpoints:
+  // Mobile: 320px - 700px (use ProjectDetailMobile)
   // Tablet: 700px - 1200px (use ProjectDetailTablet)
   // Desktop: > 1200px (use ProjectDetail)
-  // Note: Mobile version can be added later for < 700px
 
-  if (windowWidth <= 1200) {
+  if (windowWidth <= 700) {
+    return <ProjectDetailMobile />;
+  } else if (windowWidth <= 1200) {
     return <ProjectDetailTablet />;
   } else {
     return <ProjectDetail />;
