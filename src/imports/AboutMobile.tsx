@@ -18,17 +18,17 @@ function Hamburger() {
         <g id="Hamburger">
           <path
             d={svgPaths.p3b4fa6f0}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Union"
           />
           <path
             d={svgPaths.p34de4800}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Union_2"
           />
           <path
             d={svgPaths.p2f881500}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Union_3"
           />
         </g>
@@ -44,7 +44,7 @@ function Hamburger1() {
       data-name="Hamburger"
     >
       <Hamburger />
-      <div className="absolute bottom-1/4 flex flex-col font-['Albert_Sans:Black',sans-serif] font-black justify-center leading-[0] left-[44.44%] right-0 text-[#6bcd72] text-[14px] top-[29.17%]">
+      <div className="absolute bottom-1/4 flex flex-col font-['Albert_Sans:Black',sans-serif] font-black justify-center leading-[0] left-[44.44%] right-0 text-[var(--about-green)] text-[14px] top-[29.17%]">
         <p className="css-4hzbpn leading-[30px]">MENU</p>
       </div>
     </div>
@@ -57,7 +57,7 @@ function SubNavItem() {
       className="h-[24px] relative shrink-0 w-[85px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-ew64yg font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0">
+      <p className="absolute css-ew64yg font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0">
         Contact
       </p>
     </div>
@@ -70,7 +70,7 @@ function SubNavItem1() {
       className="h-[24px] relative shrink-0 w-[65px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0 w-[94px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0 w-[94px]">
         Skills
       </p>
     </div>
@@ -83,7 +83,7 @@ function SubNavItem2() {
       className="h-[24px] relative shrink-0 w-[60px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0 w-[94px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0 w-[94px]">
         Intro
       </p>
     </div>
@@ -96,7 +96,7 @@ function SubNavItem3() {
       className="h-[24px] relative shrink-0 w-[85px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0 w-[94px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0 w-[94px]">
         Career
       </p>
     </div>
@@ -145,7 +145,7 @@ function SmallSwitch() {
           <g id="Group 126">
             <line
               id="Line 98"
-              stroke="var(--stroke-0, #1E3239)"
+              stroke="var(--about-text-dark)"
               x1="10.48"
               x2="10.48"
               y1="58.44"
@@ -154,7 +154,7 @@ function SmallSwitch() {
             <circle
               cx="10.5"
               cy="63.72"
-              fill="var(--fill-0, #1E3239)"
+              fill="var(--about-text-dark)"
               id="Ellipse 10"
               r="5.28"
             />
@@ -162,7 +162,7 @@ function SmallSwitch() {
           <circle
             cx="10.5"
             cy="10.5"
-            fill="var(--fill-0, #1E3239)"
+            fill="var(--about-text-dark)"
             id="Ellipse 11"
             r="10.5"
           />
@@ -202,7 +202,7 @@ function SmallCircle() {
           <circle
             cx="87.0184"
             cy="87.0184"
-            fill="var(--fill-0, #16A19D)"
+            fill="var(--about-teal)"
             id="Small Circle_2"
             r="87.0184"
           />
@@ -258,9 +258,9 @@ function LeftCurve() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #AACCD0)"
+                  fill="var(--about-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #AACCD0)"
+                  stroke="var(--about-cyan)"
                 />
               </svg>
             </div>
@@ -300,9 +300,9 @@ function LeftCurve1() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #AACCD0)"
+                  fill="var(--about-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #AACCD0)"
+                  stroke="var(--about-cyan)"
                 />
               </svg>
             </div>
@@ -355,7 +355,7 @@ function L() {
           >
             <path
               d="M90 0V60H60V30H0V0H90Z"
-              fill="var(--fill-0, #689BA1)"
+              fill="var(--about-blue-gray)"
               id="Union"
             />
           </svg>
@@ -388,7 +388,7 @@ function L1() {
           >
             <path
               d="M90 0V60H60V30H0V0H90Z"
-              fill="var(--fill-0, #689BA1)"
+              fill="var(--about-blue-gray)"
               id="Union"
             />
           </svg>
@@ -421,7 +421,7 @@ function Square() {
       data-name="SQUARE"
     >
       <div
-        className="absolute bg-[#689ba1] inset-0"
+        className="absolute bg-[var(--about-blue-gray)] inset-0"
         data-name="SQUARE"
       />
     </div>
@@ -435,7 +435,7 @@ function Skills() {
       data-name="Skills"
     >
       <Group3 />
-      <div className="absolute font-['Albert_Sans:Regular',sans-serif] font-normal h-[56px] leading-[0] left-[165.84px] text-[#e6e6e6] text-[0px] text-[18px] top-[4573px] tracking-[-1px] w-[150px]">
+      <div className="absolute font-['Albert_Sans:Regular',sans-serif] font-normal h-[56px] leading-[0] left-[165.84px] text-[var(--about-text-light-permanent)] text-[0px] text-[18px] top-[4573px] tracking-[-1px] w-[150px]">
         <p className="css-4hzbpn mb-0">
           <span className="font-['Albert_Sans:Light',sans-serif] font-light leading-[18px]">{`I have the `}</span>
           <span className="font-['Albert_Sans:Black',sans-serif] font-black leading-[18px]">
@@ -485,7 +485,7 @@ function SmallCircle2() {
           <circle
             cx="15"
             cy="15"
-            fill="var(--fill-0, #CFD860)"
+            fill="var(--about-yellow)"
             id="Small Circle_2"
             r="15"
           />
@@ -499,7 +499,7 @@ function L2() {
   return (
     <div className="h-[315px] relative w-[30px]" data-name="L">
       <div
-        className="absolute bg-[#689ba1] inset-0"
+        className="absolute bg-[var(--about-blue-gray)] inset-0"
         data-name="L"
       />
     </div>
@@ -522,7 +522,7 @@ function SmallCircle7() {
           <circle
             cx="88.2082"
             cy="88.2082"
-            fill="var(--fill-0, #16A19D)"
+            fill="var(--about-teal)"
             id="Small Circle_2"
             r="88.2082"
           />
@@ -534,7 +534,7 @@ function SmallCircle7() {
 
 function Frame2() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-[#e6e6e6] text-center top-[19.62px] w-[133.709px]">
+    <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-[var(--about-text-light-permanent)] text-center top-[19.62px] w-[133.709px]">
       <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[18px] w-full">
         Inspiring
       </p>
@@ -559,7 +559,7 @@ function Component() {
 
 function Frame4() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-[#e6e6e6] text-center top-[19.62px] w-[133.709px]">
+    <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-[var(--about-text-light-permanent)] text-center top-[19.62px] w-[133.709px]">
       <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[18px] w-full">
         Empowering
       </p>
@@ -584,7 +584,7 @@ function Component1() {
 
 function Frame5() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-[#e6e6e6] text-center top-[19.62px] w-[133.709px]">
+    <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-[var(--about-text-light-permanent)] text-center top-[19.62px] w-[133.709px]">
       <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[18px] w-full">
         Industrious
       </p>
@@ -610,10 +610,10 @@ function Component2() {
 function Frame6() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-center top-[19.62px] w-[133.709px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[#3e6064] text-[18px] w-full">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[var(--about-dark-teal)] text-[18px] w-full">
         Grounded
       </p>
-      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[#1e3239] text-[14px] w-full">
+      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[var(--about-text-dark)] text-[14px] w-full">
         Driven by passion for the creation of great design not
         ego
       </p>
@@ -636,10 +636,10 @@ function Component3() {
 function Frame7() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-center top-[19.62px] w-[133.709px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[#3e6064] text-[18px] w-full">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[var(--about-dark-teal)] text-[18px] w-full">
         Nimble
       </p>
-      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[#1e3239] text-[14px] w-full">
+      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[var(--about-text-dark)] text-[14px] w-full">
         Driven by passion for the creation of great design not
         ego
       </p>
@@ -662,10 +662,10 @@ function Component4() {
 function Frame9() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-center top-[19.62px] w-[133.709px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[#3e6064] text-[18px] w-full">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[var(--about-dark-teal)] text-[18px] w-full">
         Honest
       </p>
-      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[#1e3239] text-[14px] w-full">
+      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[var(--about-text-dark)] text-[14px] w-full">
         Leads with integrity, speaks truth to power
       </p>
     </div>
@@ -687,10 +687,10 @@ function Component5() {
 function Frame10() {
   return (
     <div className="absolute content-stretch flex flex-col gap-[16px] items-start leading-[normal] left-[13.6px] text-center top-[19.62px] w-[133.709px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[#3e6064] text-[18px] w-full">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] relative shrink-0 text-[var(--about-dark-teal)] text-[18px] w-full">
         Calm
       </p>
-      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[#1e3239] text-[14px] w-full">
+      <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[78.491px] not-italic relative shrink-0 text-[var(--about-text-dark)] text-[14px] w-full">
         Leverages breadth and depth of expertise to navigate
         challenges
       </p>
@@ -736,9 +736,9 @@ function LeftCurve2() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #AACCD0)"
+                  fill="var(--about-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #AACCD0)"
+                  stroke="var(--about-cyan)"
                 />
               </svg>
             </div>
@@ -778,9 +778,9 @@ function LeftCurve3() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #AACCD0)"
+                  fill="var(--about-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #AACCD0)"
+                  stroke="var(--about-cyan)"
                 />
               </svg>
             </div>
@@ -822,7 +822,7 @@ function LargeParallelagram() {
         <g id="LargeParallelagram">
           <path
             d="M30 0H150L120 30H0L30 0Z"
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Rectangle 61"
           />
         </g>
@@ -857,9 +857,9 @@ function LeftCurve4() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #CAE0E2)"
+                  fill="var(--about-light-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #CAE0E2)"
+                  stroke="var(--about-light-cyan)"
                 />
               </svg>
             </div>
@@ -899,9 +899,9 @@ function LeftCurve5() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #CAE0E2)"
+                  fill="var(--about-light-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #CAE0E2)"
+                  stroke="var(--about-light-cyan)"
                 />
               </svg>
             </div>
@@ -951,9 +951,9 @@ function LeftCurve6() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #CAE0E2)"
+                  fill="var(--about-light-cyan)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #CAE0E2)"
+                  stroke="var(--about-light-cyan)"
                 />
               </svg>
             </div>
@@ -1000,7 +1000,7 @@ function SmallCircle8() {
           <circle
             cx="10"
             cy="10"
-            fill="var(--fill-0, #16A19D)"
+            fill="var(--about-teal)"
             id="Small Circle_2"
             r="10"
           />
@@ -1026,7 +1026,7 @@ function OrangeDot() {
           <circle
             cx="30"
             cy="30"
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Big Circle"
             r="30"
           />
@@ -1062,9 +1062,9 @@ function LeftCurve7() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #942976)"
+                  fill="var(--about-purple)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #942976)"
+                  stroke="var(--about-purple)"
                 />
               </svg>
             </div>
@@ -1104,9 +1104,9 @@ function LeftCurve8() {
               >
                 <path
                   d={svgPaths.p13ed5d80}
-                  fill="var(--fill-0, #942976)"
+                  fill="var(--about-purple)"
                   id="Left-curve"
-                  stroke="var(--stroke-0, #942976)"
+                  stroke="var(--about-purple)"
                 />
               </svg>
             </div>
@@ -1171,7 +1171,7 @@ function Semi() {
           <path
             clipRule="evenodd"
             d={svgPaths.p3db90400}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             fillRule="evenodd"
             id="Semi_2"
           />
@@ -1193,7 +1193,7 @@ function L3() {
         <g id="L">
           <path
             d="M90 0V60H60V30H0V0H90Z"
-            fill="var(--fill-0, #1E3239)"
+            fill="var(--about-text-dark)"
             id="Union"
           />
         </g>
@@ -1217,7 +1217,7 @@ function SmallParallelagram() {
         <g id="Small-Parallelagram">
           <path
             d="M30 0H120L90 30H0L30 0Z"
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Rectangle 61"
           />
         </g>
@@ -1233,7 +1233,7 @@ function LittleRect() {
       data-name="Little_rect"
     >
       <div
-        className="absolute bg-[#3e6064] inset-0"
+        className="absolute bg-[var(--about-dark-teal)] inset-0"
         data-name="Little_rect"
       />
     </div>
@@ -1252,9 +1252,9 @@ function LeftCurve9() {
         <g id="Left-curve">
           <path
             d={svgPaths.p54d5070}
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Left-curve_2"
-            stroke="var(--stroke-0, #6BB0CD)"
+            stroke="var(--about-blue)"
           />
         </g>
       </svg>
@@ -1277,7 +1277,7 @@ function AnchorCareer() {
         <g id="Anchor_Career">
           <path
             d="M30 0H120L90 30H0L30 0Z"
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Rectangle 61"
           />
         </g>
@@ -1293,7 +1293,7 @@ function Square5() {
       data-name="SQUARE"
     >
       <div
-        className="absolute bg-[#16a19d] inset-0"
+        className="absolute bg-[var(--about-teal)] inset-0"
         data-name="SQUARE"
       />
     </div>
@@ -1315,7 +1315,7 @@ function L4() {
         <g id="L">
           <path
             d="M90 0V60H60V30H0V0H90Z"
-            fill="var(--fill-0, #1E3239)"
+            fill="var(--about-text-dark)"
             id="Union"
           />
         </g>
@@ -1350,7 +1350,7 @@ function L5() {
           >
             <path
               d="M90 0V60H60V30H0V0H90Z"
-              fill="var(--fill-0, #689BA1)"
+              fill="var(--about-blue-gray)"
               id="Union"
             />
           </svg>
@@ -1383,7 +1383,7 @@ function L6() {
           >
             <path
               d="M90 0V60H60V30H0V0H90Z"
-              fill="var(--fill-0, #689BA1)"
+              fill="var(--about-blue-gray)"
               id="Union"
             />
           </svg>
@@ -1429,7 +1429,7 @@ function Career() {
         </div>
       </div>
       <Square5 />
-      <div className="absolute font-['Albert_Sans:Bold',sans-serif] font-bold h-[62px] leading-[0] left-[260.16px] text-[#e6e6e6] text-[0px] text-[18px] top-[2949px] tracking-[-1px] w-[90px]">
+      <div className="absolute font-['Albert_Sans:Bold',sans-serif] font-bold h-[62px] leading-[0] left-[260.16px] text-[var(--about-text-light-permanent)] text-[0px] text-[18px] top-[2949px] tracking-[-1px] w-[90px]">
         <p className="css-4hzbpn font-['Albert_Sans:Light',sans-serif] font-light leading-[24px] mb-0">{`A quick `}</p>
         <p className="css-4hzbpn mb-0">
           <span className="font-['Albert_Sans:Black',sans-serif] font-black leading-[24px]">
@@ -1468,7 +1468,7 @@ function Square6() {
       data-name="SQUARE"
     >
       <div
-        className="absolute bg-[#689ba1] inset-0"
+        className="absolute bg-[var(--about-blue-gray)] inset-0"
         data-name="SQUARE"
       />
     </div>
@@ -1479,7 +1479,7 @@ function Square8() {
   return (
     <div className="relative size-[36.75px]" data-name="SQUARE">
       <div
-        className="absolute bg-[#aaccd0] inset-0"
+        className="absolute bg-[var(--about-cyan)] inset-0"
         data-name="SQUARE"
       />
     </div>
@@ -1488,7 +1488,7 @@ function Square8() {
 
 function Frame() {
   return (
-    <div className="absolute bg-[#aaccd0] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#0c1517] text-[14px] tracking-[-1px]"
         style={{
@@ -1514,7 +1514,7 @@ function StoryCardMobile() {
 
 function Frame1() {
   return (
-    <div className="absolute bg-[#cae0e2] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
         style={{
@@ -1545,7 +1545,7 @@ function StoryCardMobile1() {
 
 function Frame11() {
   return (
-    <div className="absolute bg-[#aaccd0] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
         style={{
@@ -1576,7 +1576,7 @@ function StoryCardMobile2() {
 
 function Frame12() {
   return (
-    <div className="absolute bg-[#aaccd0] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
         style={{
@@ -1607,7 +1607,7 @@ function StoryCardMobile3() {
 
 function Frame13() {
   return (
-    <div className="absolute bg-[#cae0e2] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
         style={{
@@ -1633,7 +1633,7 @@ function StoryCardMobile4() {
 
 function Frame14() {
   return (
-    <div className="absolute bg-[#cae0e2] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
         style={{
@@ -1659,7 +1659,7 @@ function StoryCardMobile5() {
 
 function Frame15() {
   return (
-    <div className="absolute bg-[#cae0e2] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
+    <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
         className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
         style={{
@@ -1703,7 +1703,7 @@ function BigCircle() {
           <circle
             cx="58"
             cy="58"
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Big Circle_2"
             r="58"
           />
@@ -1717,7 +1717,7 @@ function Group2() {
   return (
     <div className="absolute contents left-[1.84px] top-0">
       <BigCircle />
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] leading-[30px] left-[33.84px] text-[#e6e6e6] text-[24px] top-[42px] tracking-[-1px] w-[53px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[17px] leading-[30px] left-[33.84px] text-[var(--about-text-light-permanent)] text-[24px] top-[42px] tracking-[-1px] w-[53px]">
         Hello
       </p>
     </div>
@@ -1739,7 +1739,7 @@ function DoubkleArrow() {
         <g clipPath="url(#clip0_1_1382)" id="DoubkleArrow 1">
           <path
             d={svgPaths.p254f2f80}
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Vector"
           />
         </g>
@@ -1768,7 +1768,7 @@ function DoubkleArrow1() {
         <g clipPath="url(#clip0_1_1385)" id="DoubkleArrow 2">
           <path
             d={svgPaths.p12dcb9c0}
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Vector"
           />
         </g>
@@ -1834,7 +1834,7 @@ function Component90Curve() {
         <g clipPath="url(#clip0_1_1359)" id="90curve 1">
           <path
             d={svgPaths.p16957240}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Vector"
           />
         </g>
@@ -1860,7 +1860,7 @@ function Component90Curve1() {
         <g clipPath="url(#clip0_1_1353)" id="90curve 2">
           <path
             d={svgPaths.p16957240}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Vector"
           />
         </g>
@@ -1886,7 +1886,7 @@ function Rectangle() {
         <g clipPath="url(#clip0_1_1339)" id="Rectangle 141">
           <path
             d={svgPaths.p5208400}
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Vector"
           />
         </g>
@@ -1915,7 +1915,7 @@ function Square1() {
         <g clipPath="url(#clip0_1_1333)" id="SQUARE 1">
           <path
             d="M0 0H18.2432V18.2432H0V0Z"
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Vector"
           />
         </g>
@@ -1948,7 +1948,7 @@ function Square2() {
         <g clipPath="url(#clip0_1_1333)" id="SQUARE 1">
           <path
             d="M0 0H18.2432V18.2432H0V0Z"
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Vector"
           />
         </g>
@@ -1981,7 +1981,7 @@ function DoubkleArrow2() {
         <g clipPath="url(#clip0_1_1419)" id="DoubkleArrow 3">
           <path
             d={svgPaths.p1f315000}
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -2011,7 +2011,7 @@ function LargeParallelagram1() {
           <g id="LargeParallelagram">
             <path
               d={svgPaths.pdf3cc00}
-              fill="var(--fill-0, #0076C2)"
+              fill="var(--about-dark-blue)"
               id="Rectangle 61"
             />
           </g>
@@ -2036,7 +2036,7 @@ function LargeParallelagram2() {
         <g id="LargeParallelagram">
           <path
             d="M30 0H150L120 30H0L30 0Z"
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Rectangle 61"
           />
         </g>
@@ -2060,7 +2060,7 @@ function AngledRect() {
         <g id="AngledRect">
           <path
             d="M0 0H120L90 30H0V0Z"
-            fill="var(--fill-0, #0076C2)"
+            fill="var(--about-dark-blue)"
             id="Rectangle 61"
           />
         </g>
@@ -2084,7 +2084,7 @@ function AngledRect1() {
         <g id="AngledRect">
           <path
             d="M0 0H120L90 30H0V0Z"
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Rectangle 61"
           />
         </g>
@@ -2099,7 +2099,7 @@ function Contact() {
       className="absolute contents left-[-14.7px] top-[810px]"
       data-name="Contact"
     >
-      <div className="absolute bg-[#6bb0cd] h-[276px] left-[0.16px] top-[810px] w-[284px]" />
+      <div className="absolute bg-[var(--about-blue)] h-[276px] left-[0.16px] top-[810px] w-[284px]" />
       <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[23px] leading-[30px] left-[38.84px] text-[24px] text-white top-[828px] tracking-[-0.96px] w-[228px]">
         Get in touch
       </p>
@@ -2122,7 +2122,7 @@ function Contact() {
         </p>
         <p className="css-4hzbpn">&nbsp;</p>
       </div>
-      <div className="absolute bg-[#6bcd72] h-[60px] left-[-0.16px] top-[1086px] w-[190px]" />
+      <div className="absolute bg-[var(--about-green)] h-[60px] left-[-0.16px] top-[1086px] w-[190px]" />
       <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[30px] leading-[36px] left-[94.84px] text-[16px] text-center text-white top-[1099px] tracking-[-1px] translate-x-[-50%] w-[190px] font-[Sans_Serif_Collection]">
         LinkedIn profile
       </p>
@@ -2161,7 +2161,7 @@ function Contact() {
               >
                 <path
                   d={svgPaths.pafb2100}
-                  fill="var(--fill-0, #AACCD0)"
+                  fill="var(--about-cyan)"
                   id="Vector"
                 />
               </svg>
@@ -2221,7 +2221,7 @@ function Rectangle1() {
         <g clipPath="url(#clip0_1_1330)" id="Rectangle 163">
           <path
             d={svgPaths.p310bf580}
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -2250,7 +2250,7 @@ function RightCut() {
         <g clipPath="url(#clip0_1_1303)" id="RightCut55 1">
           <path
             d={svgPaths.p23f3db70}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2279,7 +2279,7 @@ function Component90Triangle() {
         <g clipPath="url(#clip0_1_1327)" id="90_Triangle 1">
           <path
             d="M0 60H60V0L0 60Z"
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -2308,7 +2308,7 @@ function L7() {
         <g id="L">
           <path
             d="M90 0V60H60V30H0V0H90Z"
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Union"
           />
         </g>
@@ -2332,7 +2332,7 @@ function Component90Curve2() {
         <g clipPath="url(#clip0_1_1416)" id="90curve 5">
           <path
             d={svgPaths.pf4e5bc0}
-            fill="var(--fill-0, #CFD860)"
+            fill="var(--about-yellow)"
             id="Vector"
           />
         </g>
@@ -2358,7 +2358,7 @@ function Component90Curve3() {
         <g clipPath="url(#clip0_1_1294)" id="90curve 6">
           <path
             d={svgPaths.pf4e5bc0}
-            fill="var(--fill-0, #CFD860)"
+            fill="var(--about-yellow)"
             id="Vector"
           />
         </g>
@@ -2387,7 +2387,7 @@ function Component90Curve4() {
         <g clipPath="url(#clip0_1_1306)" id="90curve 7">
           <path
             d={svgPaths.p261bc3f0}
-            fill="var(--fill-0, #CFD860)"
+            fill="var(--about-yellow)"
             id="Vector"
           />
         </g>
@@ -2416,7 +2416,7 @@ function Component90Curve5() {
         <g clipPath="url(#clip0_1_1288)" id="90curve 8">
           <path
             d={svgPaths.p261bc3f0}
-            fill="var(--fill-0, #CFD860)"
+            fill="var(--about-yellow)"
             id="Vector"
           />
         </g>
@@ -2445,7 +2445,7 @@ function Component90Curve6() {
         <g clipPath="url(#clip0_1_1285)" id="90curve 9">
           <path
             d={svgPaths.pf4e5bc0}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Vector"
           />
         </g>
@@ -2474,7 +2474,7 @@ function Component90Curve7() {
         <g clipPath="url(#clip0_1_1342)" id="90curve 10">
           <path
             d={svgPaths.pf4e5bc0}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Vector"
           />
         </g>
@@ -2503,7 +2503,7 @@ function Component90Curve8() {
         <g clipPath="url(#clip0_1_1439)" id="90curve 11">
           <path
             d={svgPaths.p261bc3f0}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Vector"
           />
         </g>
@@ -2532,7 +2532,7 @@ function Component90Curve9() {
         <g clipPath="url(#clip0_1_1410)" id="90curve 12">
           <path
             d={svgPaths.p261bc3f0}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Vector"
           />
         </g>
@@ -2561,7 +2561,7 @@ function LeftCutRect() {
         <g clipPath="url(#clip0_1_1276)" id="LeftCutRect 1">
           <path
             d={svgPaths.p8a77000}
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -2594,7 +2594,7 @@ function SmallCircle1() {
         <g clipPath="url(#clip0_1_1291)" id="Small Circle 1">
           <path
             d={svgPaths.p3b81a580}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2623,7 +2623,7 @@ function OrangeDot1() {
         <g clipPath="url(#clip0_1_1291)" id="Small Circle 1">
           <path
             d={svgPaths.p3b81a580}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2652,7 +2652,7 @@ function SmallCircle3() {
         <g clipPath="url(#clip0_1_1291)" id="Small Circle 1">
           <path
             d={svgPaths.p3b81a580}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2681,7 +2681,7 @@ function SmallCircle4() {
         <g clipPath="url(#clip0_1_1291)" id="Small Circle 1">
           <path
             d={svgPaths.p3b81a580}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2710,7 +2710,7 @@ function SmallCircle5() {
         <g clipPath="url(#clip0_1_1291)" id="Small Circle 1">
           <path
             d={svgPaths.p3b81a580}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2739,7 +2739,7 @@ function SmallCircle6() {
         <g clipPath="url(#clip0_1_1291)" id="Small Circle 1">
           <path
             d={svgPaths.p3b81a580}
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Vector"
           />
         </g>
@@ -2769,7 +2769,7 @@ function BigCircle1() {
           <circle
             cx="79.5"
             cy="79.5"
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Big Circle_2"
             r="79.5"
           />
@@ -2799,7 +2799,7 @@ function L8() {
         <g id="L">
           <path
             d="M90 0V60H60V30H0V0H90Z"
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Union"
           />
         </g>
@@ -2823,7 +2823,7 @@ function SmallParallelagram1() {
         <g id="Small-Parallelagram">
           <path
             d="M30 0H120L90 30H0L30 0Z"
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Rectangle 61"
           />
         </g>
@@ -2836,7 +2836,7 @@ function L9() {
   return (
     <div className="h-[390px] relative w-[93px]" data-name="L">
       <div
-        className="absolute bg-[#689ba1] inset-0"
+        className="absolute bg-[var(--about-blue-gray)] inset-0"
         data-name="L"
       />
     </div>
@@ -2869,7 +2869,7 @@ function L10() {
           >
             <path
               d="M90 0V60H60V30H0V0H90Z"
-              fill="var(--fill-0, #689BA1)"
+              fill="var(--about-blue-gray)"
               id="Union"
             />
           </svg>
@@ -2902,7 +2902,7 @@ function L11() {
           >
             <path
               d="M90 0V60H60V30H0V0H90Z"
-              fill="var(--fill-0, #689BA1)"
+              fill="var(--about-blue-gray)"
               id="Union"
             />
           </svg>
@@ -2928,7 +2928,7 @@ function EmptyBox() {
 function Frame3() {
   return (
     <div className="absolute content-stretch flex flex-col items-start justify-center left-[19.64px] pt-[9px] text-center top-[18.98px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[#3e6064] text-[24px] w-[153px]">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[var(--about-dark-teal)] text-[24px] w-[153px]">
         1
       </p>
       <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[101px] leading-[18px] not-italic relative shrink-0 text-[16px] text-black tracking-[-1px] w-[153px] font-[Cutive_Mono]">{`Human first products for positive societal & inter-personal communication`}</p>
@@ -2956,12 +2956,12 @@ function Intro() {
     >
       <div className="absolute flex h-[169.081px] items-center justify-center left-[40.16px] top-[2195px] w-[191.927px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="bg-[#3e6064] h-[169.081px] w-[191.927px]" />
+          <div className="bg-[var(--about-dark-teal)] h-[169.081px] w-[191.927px]" />
         </div>
       </div>
       <Group />
       <SmallParallelagram1 />
-      <div className="absolute bg-[#3e6064] h-[128px] left-[53.16px] top-[1857px] w-[336px]" />
+      <div className="absolute bg-[var(--about-dark-teal)] h-[128px] left-[53.16px] top-[1857px] w-[336px]" />
       <div className="absolute flex inset-[25.87%_74.14%_73.62%_-43.37%] items-center justify-center">
         <div className="flex-none h-[270px] rotate-[90deg] w-[30px]">
           <div className="relative size-full" data-name="L">
@@ -2981,7 +2981,7 @@ function Intro() {
               >
                 <path
                   d={svgPaths.p107e6280}
-                  fill="var(--fill-0, #689BA1)"
+                  fill="var(--about-blue-gray)"
                   id="L"
                 />
               </svg>
@@ -2989,14 +2989,14 @@ function Intro() {
           </div>
         </div>
       </div>
-      <div className="absolute bg-[#cae0e2] h-[124px] left-[26.16px] top-[1833px] w-[340px]" />
+      <div className="absolute bg-[var(--about-light-cyan)] h-[124px] left-[26.16px] top-[1833px] w-[340px]" />
       <p className="absolute css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[108px] leading-[18px] left-[52.84px] not-italic text-[rgb(235,243,244)] text-[14px] top-[1849px] tracking-[-1.4px] w-[291px] font-[Cutive_Mono]">
         My career began with the design of a concept tablet for
         the NHS in 1991 and I have delivered over 160 successful
         projects for global brands and innovative startups since
         then.
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[25px] leading-[30px] left-[81.34px] text-[#e6e6e6] text-[18px] text-center top-[1441px] tracking-[-1px] translate-x-[-50%] w-[93px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[25px] leading-[30px] left-[81.34px] text-[var(--about-text-light-permanent)] text-[18px] text-center top-[1441px] tracking-[-1px] translate-x-[-50%] w-[93px]">
         Hello again
       </p>
       <div
@@ -3046,7 +3046,7 @@ function SmallCircle9() {
           <circle
             cx="32"
             cy="32"
-            fill="var(--fill-0, #D05D49)"
+            fill="var(--about-red)"
             id="Small Circle_2"
             r="32"
           />
@@ -3076,7 +3076,7 @@ function ETop() {
 function Frame16() {
   return (
     <div className="absolute content-stretch flex flex-col items-start justify-center left-[19.64px] pt-[9px] text-center top-[18.98px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[#3e6064] text-[24px] w-[153px]">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[var(--about-dark-teal)] text-[24px] w-[153px]">
         4
       </p>
       <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[101px] leading-[18px] not-italic relative shrink-0 text-[16px] text-black tracking-[-1px] w-[153px]">
@@ -3102,7 +3102,7 @@ function Component10() {
 function Frame17() {
   return (
     <div className="absolute content-stretch flex flex-col items-start justify-center left-[19.64px] pt-[9px] text-center top-[18.98px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[#3e6064] text-[24px] w-[153px]">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[var(--about-dark-teal)] text-[24px] w-[153px]">
         3
       </p>
       <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[101px] leading-[18px] not-italic relative shrink-0 text-[16px] text-black tracking-[-1px] w-[153px]">
@@ -3128,7 +3128,7 @@ function Component9() {
 function Frame18() {
   return (
     <div className="absolute content-stretch flex flex-col items-start justify-center left-[19.64px] pt-[9px] text-center top-[18.98px]">
-      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[#3e6064] text-[24px] w-[153px]">
+      <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[38px] leading-[20px] relative shrink-0 text-[var(--about-dark-teal)] text-[24px] w-[153px]">
         2
       </p>
       <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[101px] leading-[18px] not-italic relative shrink-0 text-[16px] text-black tracking-[-1px] w-[153px] font-[Cutive_Mono]">
@@ -3185,7 +3185,7 @@ function LeftCut() {
         <g clipPath="url(#clip0_1_1396)" id="LeftCut85 1">
           <path
             d="M170 0L110 60H0V0H170Z"
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -3211,7 +3211,7 @@ function Square3() {
         <g clipPath="url(#clip0_1_1268)" id="SQUARE 3">
           <path
             d="M0 0H30V30H0V0Z"
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -3237,7 +3237,7 @@ function Square4() {
         <g clipPath="url(#clip0_1_1268)" id="SQUARE 3">
           <path
             d="M0 0H30V30H0V0Z"
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -3263,7 +3263,7 @@ function Square7() {
         <g clipPath="url(#clip0_1_1268)" id="SQUARE 3">
           <path
             d="M0 0H30V30H0V0Z"
-            fill="var(--fill-0, #689BA1)"
+            fill="var(--about-blue-gray)"
             id="Vector"
           />
         </g>
@@ -3293,7 +3293,7 @@ function SmallCircle10() {
           <circle
             cx="12"
             cy="12"
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Small Circle_2"
             r="12"
           />
@@ -3319,7 +3319,7 @@ function SmallCircle11() {
           <circle
             cx="12"
             cy="12"
-            fill="var(--fill-0, #16A19D)"
+            fill="var(--about-teal)"
             id="Small Circle_2"
             r="12"
           />
@@ -3345,7 +3345,7 @@ function SmallCircle12() {
           <circle
             cx="12"
             cy="12"
-            fill="var(--fill-0, #942976)"
+            fill="var(--about-purple)"
             id="Small Circle_2"
             r="12"
           />
@@ -3370,7 +3370,7 @@ function SmallParallelagram2() {
         <g id="Small-Parallelagram">
           <path
             d={svgPaths.p1d68bd80}
-            fill="var(--fill-0, #6BB0CD)"
+            fill="var(--about-blue)"
             id="Rectangle 61"
           />
         </g>
@@ -3423,7 +3423,7 @@ function Content() {
         }
       >
         <div className="flex-none rotate-[-6.33deg]">
-          <div className="flex flex-col font-['Albert_Sans:Regular',sans-serif] font-normal h-[91.494px] justify-center leading-[0] relative text-[#e6e6e6] text-[14px] tracking-[-1px] w-[137.589px]">
+          <div className="flex flex-col font-['Albert_Sans:Regular',sans-serif] font-normal h-[91.494px] justify-center leading-[0] relative text-[var(--about-text-light-permanent)] text-[14px] tracking-[-1px] w-[137.589px]">
             <p className="css-4hzbpn leading-[16px]">
               Recognized for my success in managing high
               performing teams.
@@ -3496,47 +3496,47 @@ function Content() {
       <Career />
       <div className="absolute flex inset-[71.75%_29.92%_27.29%_32.37%] items-center justify-center">
         <div className="flex-none h-[49.014px] rotate-[-3deg] scale-y-[-100%] skew-x-[-0.37deg] w-[145.003px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[70.16%_1.15%_28.09%_13.37%] items-center justify-center">
         <div className="flex-none h-[103.946px] scale-y-[-100%] w-[333.35px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[67.26%_-0.11%_30.98%_11.35%] items-center justify-center">
         <div className="flex-none h-[103.946px] scale-y-[-100%] w-[346.152px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[64.27%_-0.04%_33.98%_8.97%] items-center justify-center">
         <div className="flex-none h-[103.945px] scale-y-[-100%] w-[355.139px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[61.42%_0.25%_36.82%_8.68%] items-center justify-center">
         <div className="flex-none h-[103.946px] scale-y-[-100%] w-[355.136px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[58.61%_0.27%_39.64%_17.63%] items-center justify-center">
         <div className="flex-none h-[103.946px] scale-y-[-100%] w-[320.209px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[72.58%_33.03%_26.76%_36.92%] items-center justify-center">
         <div className="flex-none h-[33.483px] rotate-[-3deg] scale-y-[-100%] skew-x-[-0.2deg] w-[115.746px]">
-          <div className="bg-[#aaccd0] size-full" />
+          <div className="bg-[var(--about-cyan)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[55.46%_0.21%_42.79%_12.35%] items-center justify-center">
         <div className="flex-none h-[103.944px] scale-y-[-100%] w-[340.983px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div className="absolute flex inset-[53.02%_0.1%_45.49%_10.19%] items-center justify-center">
         <div className="flex-none h-[88.267px] scale-y-[-100%] w-[349.848px]">
-          <div className="bg-[#3e6064] size-full" />
+          <div className="bg-[var(--about-dark-teal)] size-full" />
         </div>
       </div>
       <div
@@ -3574,19 +3574,19 @@ function Content() {
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[36.84px] text-[#ebf3f4] text-[18px] top-[3081px] tracking-[-1px] w-[151px]">
         1990 - 1993
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[#aaccd0] text-[18px] text-right top-[3242px] tracking-[-1px] translate-x-[-100%] w-[120px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan)] text-[18px] text-right top-[3242px] tracking-[-1px] translate-x-[-100%] w-[120px]">
         1993 - 1995
       </p>
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[36.84px] text-[#ebf3f4] text-[18px] top-[3413px] tracking-[-1px] w-[151px]">
         1995-2003
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[#aaccd0] text-[18px] text-right top-[3581.71px] tracking-[-1px] translate-x-[-100%] w-[151px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan)] text-[18px] text-right top-[3581.71px] tracking-[-1px] translate-x-[-100%] w-[151px]">
         2003 - 2011
       </p>
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[36.84px] text-[#ebf3f4] text-[18px] top-[3745px] tracking-[-1px] w-[151px]">
         2011 - 2016
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[#aaccd0] text-[18px] text-right top-[3924px] tracking-[-1px] translate-x-[-100%] w-[151px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan)] text-[18px] text-right top-[3924px] tracking-[-1px] translate-x-[-100%] w-[151px]">
         2016 - 2020
       </p>
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[37.16px] text-[#ebf3f4] text-[18px] top-[4103px] tracking-[-1px] w-[151px]">
@@ -3594,14 +3594,14 @@ function Content() {
       </p>
       <StoryCardMobile6 />
       <Landing />
-      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[100px] leading-[0] left-[172.84px] text-[#e6e6e6] text-[0px] text-[14px] top-[247px] tracking-[-0.56px] w-[169px]">
+      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[100px] leading-[0] left-[172.84px] text-[var(--about-text-light-permanent)]text-[0px] text-[14px] top-[247px] tracking-[-0.56px] w-[169px]">
         <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-black leading-[18px] mb-0">{`Welcome to Selflux, `}</p>
         <p className="css-4hzbpn">
           <span className="font-['Albert_Sans:Light',sans-serif] font-light leading-[18px]">{`a showcase of interactive products and experiences by `}</span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[#6bb0cd]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-blue)]">
             Nick Cristea
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[#e6e6e6]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-text-light-permanent)]">
             ,
           </span>
           <span className="font-['Albert_Sans:Light',sans-serif] font-black leading-[18px]">
@@ -3613,11 +3613,11 @@ function Content() {
           <span className="font-['Albert_Sans:Light',sans-serif] font-black leading-[18px]">
             {" "}
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[#6bcd72]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-green)]">
             BCG X
           </span>
           <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px]">{`, `}</span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[#cfd860]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-yellow)]">
             AllofUs
           </span>
           <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px]">
@@ -3632,7 +3632,7 @@ function Content() {
           <span className="font-['Albert_Sans:Light',sans-serif] font-black leading-[18px]">
             {" "}
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[#d05d49]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-red)]">
             Digit
           </span>
           <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px]">
@@ -3807,7 +3807,7 @@ function Content() {
       <ETop />
       <div className="absolute flex h-[110px] items-center justify-center left-[53.16px] top-[2019px] w-[336px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="bg-[#3e6064] h-[110px] w-[336px]" />
+          <div className="bg-[var(--about-dark-teal)] h-[110px] w-[336px]" />
         </div>
       </div>
       <div
@@ -3820,7 +3820,7 @@ function Content() {
         }
       >
         <div className="flex-none rotate-[179.71deg] scale-y-[-100%]">
-          <div className="bg-[#cae0e2] h-[101.809px] w-[357.615px]" />
+          <div className="bg-[var(--about-light-cyan)] h-[101.809px] w-[357.615px]" />
         </div>
       </div>
       <div
@@ -3843,24 +3843,24 @@ function Content() {
       </div>
       <div className="absolute flex h-[169.081px] items-center justify-center left-[196.16px] top-[2562px] w-[191.927px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="bg-[#3e6064] h-[169.081px] w-[191.927px]" />
+          <div className="bg-[var(--about-dark-teal)] h-[169.081px] w-[191.927px]" />
         </div>
       </div>
       <div className="absolute flex h-[169.081px] items-center justify-center left-[50.16px] top-[2448px] w-[191.927px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="bg-[#3e6064] h-[169.081px] w-[191.927px]" />
+          <div className="bg-[var(--about-dark-teal)] h-[169.081px] w-[191.927px]" />
         </div>
       </div>
       <div className="absolute flex h-[169.081px] items-center justify-center left-[198.16px] top-[2344px] w-[191.927px]">
         <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="bg-[#3e6064] h-[169.081px] w-[191.927px]" />
+          <div className="bg-[var(--about-dark-teal)] h-[169.081px] w-[191.927px]" />
         </div>
       </div>
       <Component10 />
       <Component9 />
       <Component8 />
-      <div className="absolute bg-[#3e6064] h-[92px] left-[90.16px] top-[1725.99px] w-[279px]" />
-      <div className="absolute bg-[#cae0e2] h-[106px] left-[44.16px] top-[1691px] w-[310px]" />
+      <div className="absolute bg-[var(--about-dark-teal)] h-[92px] left-[90.16px] top-[1725.99px] w-[279px]" />
+      <div className="absolute bg-[var(--about-light-cyan)] h-[106px] left-[44.16px] top-[1691px] w-[310px]" />
       <p className="absolute css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[57px] leading-[18px] left-[55.16px] not-italic text-[rgb(235,243,244)] text-[14px] top-[1707px] tracking-[-1.4px] w-[289px] font-[Cutive_Mono]">
         I’m Nick Cristea, an interactive designer with a rich
         history of creating potent products and experiences
@@ -3958,14 +3958,14 @@ function Content() {
           <SmallCircle12 />
         </div>
       </div>
-      <div className="absolute bg-[#6bcd72] h-[60px] left-[190.84px] top-[1086px] w-[162px]" />
+      <div className="absolute bg-[var(--about-green)] h-[60px] left-[190.84px] top-[1086px] w-[162px]" />
       <p className="absolute css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-bold h-[30px] leading-[36px] left-[271.34px] text-[16px] text-center text-white top-[1100px] tracking-[-1px] translate-x-[-50%] w-[165px]">
         Download Resume
       </p>
       <div className="absolute flex inset-[99.53%_17.66%_-0.03%_8.25%] items-center justify-center">
         <div className="flex-none h-[30px] scale-y-[-100%] w-[288.974px]">
           <div
-            className="bg-[#689ba1] size-full"
+            className="bg-[var(--about-blue-gray)] size-full"
             data-name="Rectangle"
           />
         </div>
@@ -3980,7 +3980,7 @@ function Content() {
         }
       >
         <div className="flex-none rotate-[-97.22deg]">
-          <div className="bg-[#689ba1] h-[30px] w-[600px]" />
+          <div className="bg-[var(--about-blue-gray)] h-[30px] w-[600px]" />
         </div>
       </div>
       <div className="absolute aspect-[294.760121534302/139.4833620061545] flex items-center justify-center left-[-49.19%] right-[73.61%] top-[calc(50%-2508.76px)] translate-y-[-50%]">
@@ -4005,7 +4005,7 @@ function Content() {
               >
                 <path
                   d={svgPaths.pd9c0c00}
-                  fill="var(--fill-0, #3E6064)"
+                  fill="var(--about-dark-teal)"
                   id="Vector"
                 />
               </svg>
@@ -4016,13 +4016,13 @@ function Content() {
       <div className="absolute flex inset-[49.16%_92.86%_50.33%_-52.86%] items-center justify-center">
         <div className="flex-none h-[234px] rotate-[90deg] w-[30px]">
           <div
-            className="bg-[#6bcd72] size-full"
+            className="bg-[var(--about-green)] size-full"
             data-name="L"
           />
         </div>
       </div>
-      <div className="absolute bg-[#0076c2] h-[30px] left-[200.84px] top-[1470px] w-[24px]" />
-      <div className="absolute bg-[#6bb0cd] h-[61px] left-[315.84px] top-[1319px] w-[29px]" />
+      <div className="absolute bg-[var(--about-dark-blue)] h-[30px] left-[200.84px] top-[1470px] w-[24px]" />
+      <div className="absolute bg-[var(--about-blue)] h-[61px] left-[315.84px] top-[1319px] w-[29px]" />
       <div
         className="absolute flex h-[91px] items-center justify-center left-[170.84px] top-[1289px] w-[30px]"
         style={
@@ -4055,7 +4055,7 @@ function LargeParallelagram3() {
         <g id="LargeParallelagram">
           <path
             d="M18 0H90L72 18H0L18 0Z"
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Rectangle 61"
           />
         </g>
@@ -4079,7 +4079,7 @@ function AngledRect2() {
         <g id="AngledRect">
           <path
             d="M0 0H90L67.5 18H0V0Z"
-            fill="var(--fill-0, #3E6064)"
+            fill="var(--about-dark-teal)"
             id="Rectangle 61"
           />
         </g>

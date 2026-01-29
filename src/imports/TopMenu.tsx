@@ -15,17 +15,17 @@ function Hamburger() {
         <g id="Hamburger">
           <path
             d={svgPaths.p3b4fa6f0}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Union"
           />
           <path
             d={svgPaths.p34de4800}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Union_2"
           />
           <path
             d={svgPaths.p2f881500}
-            fill="var(--fill-0, #6BCD72)"
+            fill="var(--about-green)"
             id="Union_3"
           />
         </g>
@@ -41,7 +41,7 @@ function Hamburger1() {
       data-name="Hamburger"
     >
       <Hamburger />
-      <div className="absolute bottom-1/4 flex flex-col font-['Albert_Sans:Black',sans-serif] font-black justify-center leading-[0] left-[44.44%] right-0 text-[#6bcd72] text-[14px] top-[29.17%]">
+      <div className="absolute bottom-1/4 flex flex-col font-['Albert_Sans:Black',sans-serif] font-black justify-center leading-[0] left-[44.44%] right-0 text-[var(--about-green)] text-[14px] top-[29.17%]">
         <p className="css-4hzbpn leading-[30px]">MENU</p>
       </div>
     </div>
@@ -54,7 +54,7 @@ function SubNavItem() {
       className="h-[24px] relative shrink-0 w-[80px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-ew64yg font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0">
+      <p className="absolute css-ew64yg font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0">
         Contact
       </p>
     </div>
@@ -67,7 +67,7 @@ function SubNavItem1() {
       className="h-[24px] relative shrink-0 w-[55px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0">
         Skills
       </p>
     </div>
@@ -80,7 +80,7 @@ function SubNavItem2() {
       className="h-[24px] relative shrink-0 w-[50px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0">
         Intro
       </p>
     </div>
@@ -93,7 +93,7 @@ function SubNavItem3() {
       className="h-[24px] relative shrink-0 w-[75px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[#e6e6e6] text-[16px] top-0">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0">
         Career
       </p>
     </div>
@@ -142,7 +142,7 @@ function SmallSwitch() {
           <g id="Group 126">
             <line
               id="Line 98"
-              stroke="var(--stroke-0, #1E3239)"
+              stroke="var(--about-text-dark)"
               x1="10.48"
               x2="10.48"
               y1="58.44"
@@ -151,7 +151,7 @@ function SmallSwitch() {
             <circle
               cx="10.5"
               cy="63.72"
-              fill="var(--fill-0, #1E3239)"
+              fill="var(--about-text-dark)"
               id="Ellipse 10"
               r="5.28"
             />
@@ -159,7 +159,7 @@ function SmallSwitch() {
           <circle
             cx="10.5"
             cy="10.5"
-            fill="var(--fill-0, #1E3239)"
+            fill="var(--about-text-dark)"
             id="Ellipse 11"
             r="10.5"
           />
@@ -172,7 +172,7 @@ function SmallSwitch() {
 export default function TopMenu() {
   return (
     <div
-      className="bg-[#0a4947] content-stretch flex items-start justify-between pb-[15px] pt-[30px] px-[30px] relative shadow-[0px_10px_40px_0px_rgba(0,0,0,0.25)] size-full"
+      className="bg-[var(--about-bg)] content-stretch flex items-start justify-between pb-[15px] pt-[30px] px-[30px] relative shadow-[0px_10px_40px_0px_rgba(0,0,0,0.25)] size-full"
       data-name="TopMenu"
     >
       <MobileMenu />
