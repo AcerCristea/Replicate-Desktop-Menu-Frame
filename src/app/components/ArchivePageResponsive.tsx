@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArchivePage } from './ArchivePage';
+import { ArchiveTabletPage } from './ArchiveTabletPage';
 import { ArchiveMobilePage } from './ArchiveMobilePage';
 
 export function ArchivePageResponsive() {
@@ -18,10 +19,13 @@ export function ArchivePageResponsive() {
 
   // Breakpoints:
   // Mobile: 320px - 776px (use ArchiveMobilePage)
-  // Desktop: > 776px (use ArchivePage)
+  // Tablet: 776px - 1200px (use ArchiveTabletPage)
+  // Desktop: > 1200px (use ArchivePage)
 
   if (windowWidth <= 776) {
     return <ArchiveMobilePage />;
+  } else if (windowWidth <= 1200) {
+    return <ArchiveTabletPage />;
   } else {
     return <ArchivePage />;
   }

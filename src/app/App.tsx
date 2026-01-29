@@ -26,9 +26,9 @@ function AppContent() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Hide navigation on mobile (<=776px) for archive page
-  const isMobile = windowWidth <= 776;
-  const hideNav = isProjectPage || isLandingPage || isAboutPage || (isArchivePage && isMobile);
+  // Hide navigation on mobile (<=776px) and tablet (<=1200px) for archive page
+  const isMobileOrTablet = windowWidth <= 1200;
+  const hideNav = isProjectPage || isLandingPage || isAboutPage || (isArchivePage && isMobileOrTablet);
   const needsMargin = !hideNav;
 
   return (
