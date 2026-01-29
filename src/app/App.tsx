@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Navigation } from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
 import { ArchivePageResponsive } from "./components/ArchivePageResponsive";
-import { ProjectDetail } from "./components/ProjectDetail";
+import { ProjectDetailResponsive } from "./components/ProjectDetailResponsive";
 import { AboutPage } from "./components/AboutPage";
 
 function AppContent() {
@@ -40,7 +40,7 @@ function AppContent() {
           <Route path="/archive" element={<ArchivePageResponsive />} />
           <Route
             path="/project/:id"
-            element={<ProjectDetail />}
+            element={<ProjectDetailResponsive />}
           />
           <Route
             path="/about"
