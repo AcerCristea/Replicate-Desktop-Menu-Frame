@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { motion, PanInfo } from 'motion/react';
 import { supabase, Project } from '../../lib/supabase';
 import svgPaths from '../../imports/svg-project-page';
 import { SupabaseImage } from './SupabaseImage';
@@ -174,14 +175,9 @@ function BackArrow({ onClick, disabled }: { onClick: () => void; disabled: boole
 // --- Tray Components ---
 function DragBar() {
   return (
-    <div className="h-0 relative shrink-0 w-full">
-      <div className="-translate-x-1/2 absolute h-0 left-1/2 top-0 w-[76px]">
-        <div className="absolute inset-[-3px_0_0_0]">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 76 3">
-            <line stroke="#E6E6E6" strokeLinecap="round" strokeWidth="3" x1="1.5" x2="74.5" y1="1.5" y2="1.5" />
-          </svg>
-        </div>
-      </div>
+    <div className="h-4 relative shrink-0 w-full flex justify-center items-start cursor-grab active:cursor-grabbing">
+      {/* Visual drag handle */}
+      <div className="w-[76px] h-1 bg-[#E6E6E6] rounded-full opacity-50" />
     </div>
   );
 }
@@ -327,7 +323,8 @@ function ScrollableContent({
   industry,
   primaryTag,
   secondaryTags,
-  team
+  team,
+  isOpen
 }: {
   clientName: string;
   overview: string;
@@ -337,22 +334,56 @@ function ScrollableContent({
   primaryTag: string;
   secondaryTags: string;
   team: string;
+  isOpen: boolean;
 }) {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] flex-1 items-start overflow-x-clip overflow-y-auto relative shrink-0 w-full scrollbar-hide">
-      <ProjectInformation
-        clientName={clientName}
-        overview={overview}
-        description={description}
-      />
-      <ProjectDetails
-        date={date}
-        industry={industry}
-        primaryTag={primaryTag}
-        secondaryTags={secondaryTags}
-        team={team}
-      />
-    </div>
+    <>
+      {isOpen ? (
+        // OPEN state: ProjectInformation scrolls, ProjectDetails pinned at bottom
+        <div className="flex flex-col h-full overflow-hidden w-full">
+          {/* Scrollable Information */}
+          <div className="flex-1 overflow-y-auto scrollbar-hide pr-2 pb-4">
+            <ProjectInformation
+              clientName={clientName}
+              overview={overview}
+              description={description}
+            />
+          </div>
+
+          {/* Keyline */}
+          <div className="h-px w-full bg-[#CAE0E2] shrink-0 my-2 opacity-30" />
+
+          {/* Fixed Details at bottom */}
+          <div className="shrink-0 w-full">
+            <ProjectDetails
+              date={date}
+              industry={industry}
+              primaryTag={primaryTag}
+              secondaryTags={secondaryTags}
+              team={team}
+            />
+          </div>
+        </div>
+      ) : (
+        // CLOSED state: Everything scrolls together
+        <div className="content-stretch flex flex-col gap-[10px] flex-1 items-start overflow-x-clip overflow-y-auto relative shrink-0 w-full scrollbar-hide">
+          <ProjectInformation
+            clientName={clientName}
+            overview={overview}
+            description={description}
+          />
+          {/* Keyline */}
+          <div className="h-px w-full bg-[#CAE0E2] shrink-0 my-2 opacity-30" />
+          <ProjectDetails
+            date={date}
+            industry={industry}
+            primaryTag={primaryTag}
+            secondaryTags={secondaryTags}
+            team={team}
+          />
+        </div>
+      )}
+    </>
   );
 }
 
@@ -383,17 +414,55 @@ function TrayContent({
   onNext: () => void;
   onPrevious: () => void;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Height variants: 40vh when closed, 75vh when open
+  const variants = {
+    closed: { height: "40vh" },
+    open: { height: "75vh" }
+  };
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const threshold = 50; // drag distance to trigger toggle
+
+    if (isOpen) {
+      // If open, drag down (positive y) to close
+      if (info.offset.y > threshold) {
+        setIsOpen(false);
+      }
+    } else {
+      // If closed, drag up (negative y) to open
+      if (info.offset.y < -threshold) {
+        setIsOpen(true);
+      }
+    }
+  };
+
   return (
-    <div className="bg-[#1e3239] h-[320px] relative shadow-[0px_-10px_40px_0px_rgba(0,0,0,0.25)] shrink-0 w-full">
-      <div className="content-stretch flex flex-col gap-[15px] items-start pb-[7px] pt-[20px] px-[30px] relative size-full">
-        <DragBar />
+    <motion.div
+      initial="closed"
+      animate={isOpen ? "open" : "closed"}
+      variants={variants}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      drag="y"
+      dragConstraints={{ top: 0, bottom: 0 }}
+      dragElastic={0.05}
+      onDragEnd={handleDragEnd}
+      className="bg-[#1e3239] min-h-[320px] relative shadow-[0px_-10px_40px_0px_rgba(0,0,0,0.25)] shrink-0 w-full z-10 flex flex-col will-change-[height]"
+    >
+      <div className="flex flex-col gap-[15px] items-start pb-[7px] pt-[20px] px-[30px] relative size-full overflow-hidden">
+        {/* Clickable DragBar to toggle */}
+        <div className="w-full shrink-0" onClick={() => setIsOpen(!isOpen)}>
+          <DragBar />
+        </div>
         <Captions
           captions={captions}
           currentIndex={currentCaptionIndex}
           onNext={onNext}
           onPrevious={onPrevious}
         />
-        <Keyline />
+        {/* Keyline - only show when closed, as ScrollableContent handles it when open */}
+        {!isOpen && <Keyline />}
         <ScrollableContent
           clientName={clientName}
           overview={overview}
@@ -403,9 +472,10 @@ function TrayContent({
           primaryTag={primaryTag}
           secondaryTags={secondaryTags}
           team={team}
+          isOpen={isOpen}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -466,7 +536,7 @@ function MobileImageCanvas({
         imageNumber={currentImageNumber}
       />
 
-      {/* Tray Content - fixed 320px height */}
+      {/* Tray Content - draggable, animates between 40vh (closed) and 75vh (open) */}
       <TrayContent
         clientName={clientName}
         overview={overview}
