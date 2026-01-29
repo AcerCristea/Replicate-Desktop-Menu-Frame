@@ -254,16 +254,17 @@ function ProjectInformation({
   const descriptionParagraphs = description.split('\n').filter(para => para.trim() !== '');
 
   return (
-    <div className="flex-[1_0_0] max-w-[500px] min-h-px min-w-px relative">
-      <div className="flex flex-col items-center max-w-[inherit] overflow-x-clip overflow-y-auto size-full scrollbar-hide">
-        <div className="content-stretch flex flex-col gap-[16px] items-center leading-[24px] max-w-[inherit] px-[30px] py-[12px] relative size-full text-[#e6e6e6]">
+    <div className="flex-[1_0_0] h-[241px] max-w-[500px] min-h-px min-w-px relative">
+      {/* Entire section scrolls */}
+      <div className="flex flex-col items-start max-w-[inherit] overflow-y-auto h-full scrollbar-hide">
+        <div className="content-stretch flex flex-col gap-[16px] items-start leading-[24px] max-w-[inherit] px-[30px] py-[12px] relative w-full text-[#e6e6e6]">
           <p className="font-['Albert_Sans',sans-serif] font-bold relative shrink-0 text-[36px] tracking-[-2px] w-full">
             {clientName}
           </p>
           <p className="font-['Albert_Sans',sans-serif] font-light relative shrink-0 text-[20px] w-full">
             {overview}
           </p>
-          <div className="font-['Albert_Sans',sans-serif] font-normal relative shrink-0 text-[18px] w-full">
+          <div className="font-['Albert_Sans',sans-serif] font-normal text-[18px] w-full">
             {descriptionParagraphs.map((paragraph, index) => (
               <p key={index} className="mb-4 last:mb-0">
                 {paragraph}
@@ -357,7 +358,7 @@ function TabletImageCanvas({
   };
 
   return (
-    <div className="bg-[#1e3239] content-stretch flex flex-col gap-[30px] items-center min-h-screen w-full max-w-[1200px] min-w-[700px] relative">
+    <div className="bg-[#1e3239] content-stretch flex flex-col gap-[30px] items-center h-screen overflow-hidden w-full max-w-[1200px] min-w-[700px] relative">
       {/* Close Button */}
       <div className="h-[70px] relative shrink-0 w-full">
         <div className="flex flex-row justify-end size-full">
