@@ -20,6 +20,15 @@
   --about-text-light-permanent: #E6E6E6;  /* Never changes */
   --about-text-dark-text: #0C1517;
 
+  /* Permanent brand colors - always visible regardless of switch state */
+  --about-blue-permanent: #6BB0CD;
+  --about-green-permanent: #6BCD72;
+  --about-yellow-permanent: #CFD860;
+  --about-red-permanent: #D05D49;
+
+  /* Career text - switches between dark (on) and light (off) */
+  --about-career-text: #0C1517;  /* Dark when switch is ON (colorful mode) */
+
 
   --font-size: 16px;
   --background: #ffffff;
@@ -154,6 +163,7 @@
   --about-light-cyan: #1E3239;
   --about-dark-teal: #1E3239;
   --about-text-light: #1E3239;
+  --about-career-text: #E6E6E6;  /* Light when switch is OFF (monochrome mode) */
 }
 
 @layer base {

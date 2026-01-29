@@ -1490,12 +1490,7 @@ function Frame() {
   return (
     <div className="absolute bg-[var(--about-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#0c1517] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
       >{`After 2 years producing CD-ROMs and teaching graduate students in Nottingham, UK, I joined Digit as a junior partner, designer and  programmer in 1995.`}</p>
     </div>
   );
@@ -1516,12 +1511,7 @@ function Frame1() {
   return (
     <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
       >
         Over an 8 year period Digit made a lot of digital
         products, celebrated some big awards including 3 BAFTAs,
@@ -1547,12 +1537,7 @@ function Frame11() {
   return (
     <div className="absolute bg-[var(--about-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
       >
         In 2003 I co-founded AllofUs, branched out into large
         scale interactive experiences, and onto exciting new
@@ -1578,12 +1563,7 @@ function Frame12() {
   return (
     <div className="absolute bg-[var(--about-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
       >
         I grew the AllofUs US office quickly with big projects
         for Yale school of Medicine and National Museum of
@@ -1609,12 +1589,7 @@ function Frame13() {
   return (
     <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
       >{`For the last 5 years I have been leading the North American design team at BCG and working on  transformational digital ecosystems for Healthcare and Finance clients.`}</p>
     </div>
   );
@@ -1635,13 +1610,8 @@ function Frame14() {
   return (
     <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
-      >{`AllofUs grew it’s client base and delivered huge projects for McCann clients such as IKEA and Nestle. When AllofUs became independent again I moved to San Francisco to start our US office. `}</p>
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
+      >{`AllofUs grew it's client base and delivered huge projects for McCann clients such as IKEA and Nestle. When AllofUs became independent again I moved to San Francisco to start our US office. `}</p>
     </div>
   );
 }
@@ -1661,12 +1631,7 @@ function Frame15() {
   return (
     <div className="absolute bg-[var(--about-light-cyan)] content-stretch flex items-center left-0 px-[15px] py-[10px] top-0 w-[347px]">
       <p
-        className="bg-[top_left,center] bg-clip-text bg-size-[auto_auto,cover] css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[#ebf3f4] text-[14px] tracking-[-1px]"
-        style={{
-          WebkitTextFillColor: "transparent",
-          backgroundRepeat: "repeat, no-repeat",
-          backgroundImage: `linear-gradient(90deg, rgb(235, 243, 244) 0%, rgb(235, 243, 244) 100%), url('${imgAllofUsGrewItsClientBaseAndDeliveredHugeProjectsForMcCannClientsIkeaAndNestleThenAllofUsBecameIndependentAgainAndIMovedToSanFranciscoToStartOurUsOffice}')`,
-        }}
+        className="css-4hzbpn flex-[1_0_0] font-['Cutive_Mono:Regular',sans-serif] leading-[16px] min-h-px min-w-px not-italic relative text-[var(--about-career-text)] text-[14px] tracking-[-1px]"
       >
         I was trained as an industrial designer but fast pivoted
         to digital products - I started by designing a bedside
@@ -3594,11 +3559,11 @@ function Content() {
       </p>
       <StoryCardMobile6 />
       <Landing />
-      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[100px] leading-[0] left-[172.84px] text-[var(--about-text-light-permanent)]text-[0px] text-[14px] top-[247px] tracking-[-0.56px] w-[169px]">
+      <div className="absolute font-['Albert_Sans:Light',sans-serif] font-light h-[100px] leading-[0] left-[172.84px] text-[var(--about-text-light-permanent)] text-[14px] top-[247px] tracking-[-0.56px] w-[169px]">
         <p className="css-4hzbpn font-['Albert_Sans:Bold',sans-serif] font-black leading-[18px] mb-0">{`Welcome to Selflux, `}</p>
         <p className="css-4hzbpn">
           <span className="font-['Albert_Sans:Light',sans-serif] font-light leading-[18px]">{`a showcase of interactive products and experiences by `}</span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-blue)]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-blue-permanent)]">
             Nick Cristea
           </span>
           <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-text-light-permanent)]">
@@ -3613,14 +3578,14 @@ function Content() {
           <span className="font-['Albert_Sans:Light',sans-serif] font-black leading-[18px]">
             {" "}
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-green)]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-green-permanent)]">
             BCG X
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px]">{`, `}</span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-yellow)]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-text-light-permanent)]">{`, `}</span>
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-yellow-permanent)]">
             AllofUs
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-text-light-permanent)]">
             ,
           </span>
           <span className="font-['Albert_Sans:Light',sans-serif] font-black leading-[18px]">
@@ -3632,10 +3597,10 @@ function Content() {
           <span className="font-['Albert_Sans:Light',sans-serif] font-black leading-[18px]">
             {" "}
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-red)]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-red-permanent)]">
             Digit
           </span>
-          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px]">
+          <span className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[18px] text-[var(--about-text-light-permanent)]">
             .
           </span>
         </p>
