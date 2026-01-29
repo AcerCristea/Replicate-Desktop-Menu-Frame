@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import svgPaths from "@/imports/svg-e88u7wsc8v";
-import { supabase, Project } from "../../lib/supabase";
+import { useArchiveData, FilterColumn } from "../hooks/useArchiveData";
 
 function Hamburger() {
   return (
@@ -82,33 +80,21 @@ function LoadingRow() {
 }
 
 export function ArchiveMobilePage() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  const {
+    projects,
+    loading,
+    activeFilter,
+    handleFilterChange,
+    handleProjectClick,
+  } = useArchiveData();
 
-  useEffect(() => {
-    async function fetchProjects() {
-      try {
-        const { data, error } = await supabase
-          .from('Selflux_Archive')
-          .select('*')
-          .eq('Visible', 'TRUE')
-          .order('Date', { ascending: false });
-
-        if (error) throw error;
-        setProjects(data || []);
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchProjects();
-  }, []);
-
-  const handleProjectClick = (projectId: string) => {
-    navigate(`/project/${projectId}`);
+  // Helper to get header styles based on active state
+  const getHeaderStyles = (column: FilterColumn) => {
+    const isActive = activeFilter === column;
+    return {
+      textColor: isActive ? 'text-[#d05d49]' : 'text-[#1e3239]',
+      showUnderline: isActive,
+    };
   };
 
   return (
@@ -120,29 +106,52 @@ export function ArchiveMobilePage() {
 
           {/* Sticky Subnav */}
           <div className="sticky top-0 z-10 bg-[#CEDD62] pt-2 pb-0 w-full shrink-0" data-name="ArchiveSubnavMobile">
-            <div className="flex gap-[20px] items-center w-full px-[20px] pb-2">
+            <div className="flex gap-[20px] items-end w-full px-[20px] pb-2">
               {/* CLIENT */}
-              <div className="flex-[1_0_0] relative cursor-pointer group">
-                <div className="flex flex-col gap-[15px] items-start w-full">
-                  <div className="font-['Albert_Sans',sans-serif] font-semibold text-[#d05d49] text-[12px] leading-[16px] w-full group-hover:opacity-70">
+              <div
+                className="flex-[1_0_0] relative cursor-pointer group"
+                onClick={() => handleFilterChange('CLIENT')}
+              >
+                <div className="flex flex-col items-start w-full">
+                  <div className={`font-['Albert_Sans',sans-serif] font-semibold ${getHeaderStyles('CLIENT').textColor} text-[12px] leading-[16px] w-full group-hover:opacity-70 transition-opacity`}>
                     CLIENT
                   </div>
-                  {/* Red Underline */}
-                  <div className="h-[5px] w-full bg-[#D05D49] mt-1"></div>
+                  {/* Red Underline - only show when active */}
+                  <div
+                    className={`h-[5px] w-full bg-[#D05D49] mt-2 transition-opacity ${getHeaderStyles('CLIENT').showUnderline ? 'opacity-100' : 'opacity-0'}`}
+                  />
                 </div>
               </div>
 
               {/* PROJECT TYPE */}
-              <div className="flex-[1_0_0] relative cursor-pointer group">
-                <div className="font-['Albert_Sans',sans-serif] font-semibold text-[#1e3239] text-[12px] leading-[16px] whitespace-nowrap group-hover:opacity-70">
-                  PROJECT TYPE
+              <div
+                className="flex-[1_0_0] relative cursor-pointer group"
+                onClick={() => handleFilterChange('PROJECT TYPE')}
+              >
+                <div className="flex flex-col items-start w-full">
+                  <div className={`font-['Albert_Sans',sans-serif] font-semibold ${getHeaderStyles('PROJECT TYPE').textColor} text-[12px] leading-[16px] whitespace-nowrap group-hover:opacity-70 transition-opacity`}>
+                    PROJECT TYPE
+                  </div>
+                  {/* Red Underline - only show when active */}
+                  <div
+                    className={`h-[5px] w-full bg-[#D05D49] mt-2 transition-opacity ${getHeaderStyles('PROJECT TYPE').showUnderline ? 'opacity-100' : 'opacity-0'}`}
+                  />
                 </div>
               </div>
 
               {/* DATE */}
-              <div className="relative w-[35px] cursor-pointer group">
-                <div className="font-['Albert_Sans',sans-serif] font-semibold text-[#1e3239] text-[12px] leading-[16px] text-right group-hover:opacity-70">
-                  DATE
+              <div
+                className="relative w-[35px] cursor-pointer group"
+                onClick={() => handleFilterChange('DATE')}
+              >
+                <div className="flex flex-col items-end w-full">
+                  <div className={`font-['Albert_Sans',sans-serif] font-semibold ${getHeaderStyles('DATE').textColor} text-[12px] leading-[16px] text-right group-hover:opacity-70 transition-opacity`}>
+                    DATE
+                  </div>
+                  {/* Red Underline - only show when active */}
+                  <div
+                    className={`h-[5px] w-full bg-[#D05D49] mt-2 transition-opacity ${getHeaderStyles('DATE').showUnderline ? 'opacity-100' : 'opacity-0'}`}
+                  />
                 </div>
               </div>
             </div>
