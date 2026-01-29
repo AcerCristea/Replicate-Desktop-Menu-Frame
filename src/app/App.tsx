@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Navigation } from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
-import { ArchivePage } from "./components/ArchivePage";
+import { ArchivePageResponsive } from "./components/ArchivePageResponsive";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { AboutPage } from "./components/AboutPage";
 
@@ -10,14 +11,33 @@ function AppContent() {
   const isProjectPage = location.pathname.startsWith('/project/');
   const isLandingPage = location.pathname === '/';
   const isAboutPage = location.pathname === '/about';
+  const isArchivePage = location.pathname === '/archive';
+
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 1440
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Hide navigation on mobile (<=776px) for archive page
+  const isMobile = windowWidth <= 776;
+  const hideNav = isProjectPage || isLandingPage || isAboutPage || (isArchivePage && isMobile);
+  const needsMargin = !hideNav;
 
   return (
     <div className="size-full flex bg-[#e6e6e6]">
-      {!isProjectPage && !isLandingPage && !isAboutPage && <Navigation />}
-      <div className={isProjectPage || isLandingPage || isAboutPage ? "flex-1" : "flex-1 ml-[240px]"}>
+      {!hideNav && <Navigation />}
+      <div className={needsMargin ? "flex-1 ml-[240px]" : "flex-1"}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/archive" element={<ArchivePage />} />
+          <Route path="/archive" element={<ArchivePageResponsive />} />
           <Route
             path="/project/:id"
             element={<ProjectDetail />}
