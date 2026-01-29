@@ -18,17 +18,17 @@ function Hamburger() {
         <g id="Hamburger">
           <path
             d={svgPaths.p3b4fa6f0}
-            fill="var(--about-green)"
+            fill="var(--about-menu-permanent)"
             id="Union"
           />
           <path
             d={svgPaths.p34de4800}
-            fill="var(--about-green)"
+            fill="var(--about-menu-permanent)"
             id="Union_2"
           />
           <path
             d={svgPaths.p2f881500}
-            fill="var(--about-green)"
+            fill="var(--about-menu-permanent)"
             id="Union_3"
           />
         </g>
@@ -44,7 +44,7 @@ function Hamburger1() {
       data-name="Hamburger"
     >
       <Hamburger />
-      <div className="absolute bottom-1/4 flex flex-col font-['Albert_Sans:Black',sans-serif] font-black justify-center leading-[0] left-[44.44%] right-0 text-[var(--about-green)] text-[14px] top-[29.17%]">
+      <div className="absolute bottom-1/4 flex flex-col font-['Albert_Sans:Black',sans-serif] font-black justify-center leading-[0] left-[44.44%] right-0 text-[var(--about-menu-permanent)] text-[14px] top-[29.17%]">
         <p className="css-4hzbpn leading-[30px]">MENU</p>
       </div>
     </div>
@@ -57,7 +57,7 @@ function SubNavItem() {
       className="h-[24px] relative shrink-0 w-[85px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-ew64yg font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0">
+      <p className="absolute css-ew64yg font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-subnav-permanent)] text-[16px] top-0">
         Contact
       </p>
     </div>
@@ -70,7 +70,7 @@ function SubNavItem1() {
       className="h-[24px] relative shrink-0 w-[65px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0 w-[94px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-subnav-permanent)] text-[16px] top-0 w-[94px]">
         Skills
       </p>
     </div>
@@ -83,7 +83,7 @@ function SubNavItem2() {
       className="h-[24px] relative shrink-0 w-[60px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0 w-[94px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-subnav-permanent)] text-[16px] top-0 w-[94px]">
         Intro
       </p>
     </div>
@@ -96,7 +96,7 @@ function SubNavItem3() {
       className="h-[24px] relative shrink-0 w-[85px]"
       data-name="SubNavItem"
     >
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-text-light)] text-[16px] top-0 w-[94px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black leading-[24px] left-0 text-[var(--about-subnav-permanent)] text-[16px] top-0 w-[94px]">
         Career
       </p>
     </div>
@@ -2955,7 +2955,7 @@ function Intro() {
         </div>
       </div>
       <div className="absolute bg-[var(--about-light-cyan)] h-[124px] left-[26.16px] top-[1833px] w-[340px]" />
-      <p className="absolute css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[108px] leading-[18px] left-[52.84px] not-italic text-[rgb(235,243,244)] text-[14px] top-[1849px] tracking-[-1.4px] w-[291px] font-[Cutive_Mono]">
+      <p className="absolute css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[108px] leading-[18px] left-[52.84px] not-italic text-[var(--about-bio-text)] text-[14px] top-[1849px] tracking-[-1.4px] w-[291px] font-[Cutive_Mono]">
         My career began with the design of a concept tablet for
         the NHS in 1991 and I have delivered over 160 successful
         projects for global brands and innovative startups since
@@ -3539,19 +3539,19 @@ function Content() {
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[36.84px] text-[#ebf3f4] text-[18px] top-[3081px] tracking-[-1px] w-[151px]">
         1990 - 1993
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan)] text-[18px] text-right top-[3242px] tracking-[-1px] translate-x-[-100%] w-[120px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan-permanent)] text-[18px] text-right top-[3242px] tracking-[-1px] translate-x-[-100%] w-[120px]">
         1993 - 1995
       </p>
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[36.84px] text-[#ebf3f4] text-[18px] top-[3413px] tracking-[-1px] w-[151px]">
         1995-2003
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan)] text-[18px] text-right top-[3581.71px] tracking-[-1px] translate-x-[-100%] w-[151px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan-permanent)] text-[18px] text-right top-[3581.71px] tracking-[-1px] translate-x-[-100%] w-[151px]">
         2003 - 2011
       </p>
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[36.84px] text-[#ebf3f4] text-[18px] top-[3745px] tracking-[-1px] w-[151px]">
         2011 - 2016
       </p>
-      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan)] text-[18px] text-right top-[3924px] tracking-[-1px] translate-x-[-100%] w-[151px]">
+      <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[349.84px] text-[var(--about-cyan-permanent)] text-[18px] text-right top-[3924px] tracking-[-1px] translate-x-[-100%] w-[151px]">
         2016 - 2020
       </p>
       <p className="absolute css-4hzbpn font-['Albert_Sans:Black',sans-serif] font-black h-[29px] leading-[30px] left-[37.16px] text-[#ebf3f4] text-[18px] top-[4103px] tracking-[-1px] w-[151px]">
@@ -3798,7 +3798,7 @@ function Content() {
         }
       >
         <div className="flex-none rotate-[-0.29deg]">
-          <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[89px] leading-[18px] not-italic relative text-[rgb(235,243,244)] text-[14px] tracking-[-1.4px] w-[328.748px] font-[Cutive_Mono]">
+          <p className="css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[89px] leading-[18px] not-italic relative text-[var(--about-bio-text)] text-[14px] tracking-[-1.4px] w-[328.748px] font-[Cutive_Mono]">
             I remain passionate about the creative potential for
             technology to improve human existence and am
             currently focused on solutions across four key
@@ -3826,8 +3826,8 @@ function Content() {
       <Component8 />
       <div className="absolute bg-[var(--about-dark-teal)] h-[92px] left-[90.16px] top-[1725.99px] w-[279px]" />
       <div className="absolute bg-[var(--about-light-cyan)] h-[106px] left-[44.16px] top-[1691px] w-[310px]" />
-      <p className="absolute css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[57px] leading-[18px] left-[55.16px] not-italic text-[rgb(235,243,244)] text-[14px] top-[1707px] tracking-[-1.4px] w-[289px] font-[Cutive_Mono]">
-        I’m Nick Cristea, an interactive designer with a rich
+      <p className="absolute css-4hzbpn font-['Cutive_Mono:Regular',sans-serif] h-[57px] leading-[18px] left-[55.16px] not-italic text-[var(--about-bio-text)] text-[14px] top-[1707px] tracking-[-1.4px] w-[289px] font-[Cutive_Mono]">
+        I'm Nick Cristea, an interactive designer with a rich
         history of creating potent products and experiences
         across industries and platforms.
       </p>

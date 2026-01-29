@@ -25,6 +25,12 @@
   --about-green-permanent: #6BCD72;
   --about-yellow-permanent: #CFD860;
   --about-red-permanent: #D05D49;
+  --about-cyan-permanent: #AACCD0;  /* Career dates - always this color */
+  --about-subnav-permanent: #E6E6E6;  /* Contact/Skills/Intro/Career - always light */
+  --about-menu-permanent: #6BCD72;  /* Menu text and hamburger - always green */
+
+  /* Bio text - switches between dark (on) and light (off) */
+  --about-bio-text: #0C1517;  /* Dark when switch is ON (colorful mode) */
 
   /* Career text - switches between dark (on) and light (off) */
   --about-career-text: #0C1517;  /* Dark when switch is ON (colorful mode) */
@@ -163,6 +169,7 @@
   --about-light-cyan: #1E3239;
   --about-dark-teal: #1E3239;
   --about-text-light: #1E3239;
+  --about-bio-text: #E6E6E6;  /* Light when switch is OFF (monochrome mode) */
   --about-career-text: #E6E6E6;  /* Light when switch is OFF (monochrome mode) */
 }
 
