@@ -4,7 +4,7 @@ import { Navigation } from "./components/Navigation";
 import { LandingPage } from "./components/LandingPage";
 import { ArchivePageResponsive } from "./components/ArchivePageResponsive";
 import { ProjectDetailResponsive } from "./components/ProjectDetailResponsive";
-import { AboutPage } from "./components/AboutPage";
+import { AboutPageResponsive } from "./components/AboutPageResponsive";
 
 function AppContent() {
   const location = useLocation();
@@ -44,7 +44,7 @@ function AppContent() {
           />
           <Route
             path="/about"
-            element={<AboutPage />}
+            element={<AboutPageResponsive />}
           />
           <Route
             path="/approach"
