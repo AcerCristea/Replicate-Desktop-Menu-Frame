@@ -1,8 +1,125 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'motion/react';
 import IPadPro from '../../imports/TabletAboutFigma';
+
+// Menu Overlay Component
+function MenuOverlay({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  const menuItems = [
+    { label: 'About', path: '/about' },
+    { label: 'Approach', path: '/approach' },
+    { label: 'Selected Works', path: '/selected-works' },
+    { label: 'White Space', path: '/white-space' },
+    { label: 'Archive', path: '/archive' },
+  ];
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            className="fixed inset-0 bg-black/30 z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
+          {/* Menu Panel */}
+          <motion.div
+            className="fixed top-0 left-0 h-full w-[175px] bg-[#0a4947] shadow-[10px_4px_40px_0px_rgba(0,0,0,0.25)] z-50"
+            initial={{ x: -175 }}
+            animate={{ x: 0 }}
+            exit={{ x: -175 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+          >
+            <div className="px-[25px] py-[34px] h-full flex flex-col">
+              {/* Close Button */}
+              <div className="mb-[40px]">
+                <motion.button
+                  className="cursor-pointer bg-transparent border-none p-0"
+                  onClick={onClose}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path
+                      d="M7.5 7.5L22.5 22.5M22.5 7.5L7.5 22.5"
+                      stroke="#aaccd0"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </motion.button>
+              </div>
+
+              {/* Menu Items */}
+              <div className="flex flex-col gap-2">
+                {menuItems.map((item, index) => (
+                  <Link key={item.path} to={item.path} onClick={onClose}>
+                    <motion.button
+                      className="font-['Albert_Sans',sans-serif] font-light text-[#aaccd0] text-[20px] tracking-[-0.6px] leading-[20px] hover:text-[#e6e6e6] transition-colors cursor-pointer bg-transparent border-none text-left px-0 py-1 w-full"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.08 }}
+                      whileHover={{ x: 10 }}
+                    >
+                      {item.label}
+                    </motion.button>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Bottom Text - Rotated */}
+              <div className="flex-1 flex items-end justify-start mt-auto mb-[0px]">
+                <div className="flex h-[400px] items-center justify-center w-[60px]">
+                  <div className="flex-none rotate-[270deg]">
+                    <div className="font-['Albert_Sans',sans-serif] font-bold text-[50px] tracking-[-1.6px] whitespace-nowrap">
+                      <span className="text-[#6bb0cd]">Nick</span>
+                      <span className="text-[#aaccd0]">Cristea</span>
+                      <span className="text-[#e6e6e6]">Selflux</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
 
 export function AboutTabletPage() {
   const [isOn, setIsOn] = useState(true); // Start with colors ON
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Setup menu toggle on TabletMenu/MobileMenu click
+  useEffect(() => {
+    const menuEl = document.querySelector('[data-name="MobileMenu"]');
+
+    const handleMenuClick = (e: Event) => {
+      e.stopPropagation();
+      setIsMenuOpen(true);
+    };
+
+    if (menuEl) {
+      (menuEl as HTMLElement).style.cursor = 'pointer';
+      menuEl.addEventListener('click', handleMenuClick);
+    }
+
+    return () => {
+      if (menuEl) {
+        menuEl.removeEventListener('click', handleMenuClick);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     // Add interaction logic to the Light Switch which is deeply nested in the imported component
@@ -64,6 +181,15 @@ export function AboutTabletPage() {
         }
         #SmallSwitch:hover {
           filter: brightness(1.2);
+        }
+
+        /* Menu Button Hover */
+        div[data-name="MobileMenu"] {
+          cursor: pointer;
+          transition: opacity 0.2s ease;
+        }
+        div[data-name="MobileMenu"]:hover {
+          opacity: 0.7;
         }
 
         /* Responsive adjustments */
@@ -222,6 +348,9 @@ export function AboutTabletPage() {
           background-color: #1E3239 !important;
         }
       `}</style>
+
+      {/* Menu Overlay */}
+      <MenuOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
       {/* Render the imported Figma component */}
       <div className="w-full h-full flex justify-center">

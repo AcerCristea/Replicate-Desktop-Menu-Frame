@@ -1,8 +1,53 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AboutParent from '../../imports/DesktopAboutFigma';
 
 export function AboutDesktopPage() {
   const [isOn, setIsOn] = useState(true); // Start with colors ON
+  const navigate = useNavigate();
+
+  // Navigation menu setup
+  useEffect(() => {
+    const menuItems = [
+      { text: 'About', path: '/about' },
+      { text: 'Approach', path: '/approach' },
+      { text: 'Selected Works', path: '/selected-works' },
+      { text: 'White Space', path: '/white-space' },
+      { text: 'Archive', path: '/archive' },
+    ];
+
+    // Find all menu items in the sidebar
+    const menuElements = document.querySelectorAll('[data-name="NewSideBarMainMenu"]');
+
+    menuElements.forEach((el) => {
+      // Get the text content to match with routes
+      const textContent = el.textContent?.trim();
+      const menuItem = menuItems.find(item => textContent?.includes(item.text));
+
+      if (menuItem) {
+        const htmlEl = el as HTMLElement;
+        htmlEl.style.cursor = 'pointer';
+
+        const handleClick = () => {
+          navigate(menuItem.path);
+        };
+
+        el.addEventListener('click', handleClick);
+
+        // Store the handler for cleanup
+        (el as any)._navHandler = handleClick;
+      }
+    });
+
+    // Cleanup
+    return () => {
+      menuElements.forEach((el) => {
+        if ((el as any)._navHandler) {
+          el.removeEventListener('click', (el as any)._navHandler);
+        }
+      });
+    };
+  }, [navigate]);
 
   useEffect(() => {
     // Add interaction logic to the Light Switch
@@ -71,6 +116,18 @@ export function AboutDesktopPage() {
         }
         div[data-name="Switch"]:hover {
           filter: brightness(1.2);
+        }
+
+        /* Navigation Menu Items */
+        div[data-name="NewSideBarMainMenu"] {
+          cursor: pointer;
+          transition: opacity 0.2s ease;
+        }
+        div[data-name="NewSideBarMainMenu"]:hover {
+          opacity: 0.7;
+        }
+        div[data-name="NewSideBarMainMenu"]:hover p {
+          color: #e6e6e6 !important;
         }
 
         /* Responsive adjustments */
